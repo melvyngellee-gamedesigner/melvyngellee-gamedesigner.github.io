@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Melvyn Gellée | Game & Level Designer Portfolio</title>
+    <meta name="description" content="Portfolio of Melvyn Gellée, Game Designer & Level Designer specialized in Game Feel, System Design and Unity. Discover my projects like Chromesthesia, Bloodlust and Ungor Bok.">
+    <meta name="author" content="Melvyn Gellée">
+    <meta name="keywords" content="Game Design, Level Design, Portfolio, Unity, C#, Melvyn Gellée, ISART Digital">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ton-site-portfolio.com/"> <meta property="og:title" content="Melvyn Gellée | Game Designer Portfolio">
+    <meta property="og:description" content="Discover my projects focused on Game Feel, visceral combat design, and precise mechanics. Built with Passion & Unity.">
+    <meta property="og:image" content="assets/portfolio_preview.jpg"> <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Melvyn Gellée | Game Designer">
+    <meta name="twitter:description" content="Check out my Game Design portfolio.">
+    <meta name="twitter:image" content="assets/portfolio_preview.jpg">
+
+    <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Melvyn Gellée" />
+    <link rel="manifest" href="assets/site.webmanifest" />
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Oswald:wght@400;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+</head>
+<body>
+	<canvas id="particle-canvas"></canvas>
+<nav class="hud-nav">
+    <a href="#accueil" class="hud-link active" data-tooltip="Home">
+        <i class="fa-solid fa-house"></i>
+    </a>
+    <a href="#competences" class="hud-link" data-tooltip="Skills">
+        <i class="fa-solid fa-microchip"></i>
+    </a>
+    <a href="#projets" class="hud-link" data-tooltip="Projects">
+        <i class="fa-solid fa-gamepad"></i>
+    </a>
+    <a href="#parcours" class="hud-link" data-tooltip="Background">
+        <i class="fa-solid fa-timeline"></i>
+    </a>
+    <a href="#contact" class="hud-link" data-tooltip="Contact">
+        <i class="fa-solid fa-paper-plane"></i>
+    </a>
+</nav>
+    <aside class="sidebar">
+        <div class="logo-area">
+    <h1>MELVYN<br>GELLEE</h1>
+    <div class="sub-logo">
+        GAME DESIGNER <span class="dot">•</span> LEVEL DESIGNER <span class="dot">•</span> UX/UI DESIGNER <span class="dot">•</span>
+    </div>
+    </div>
+    </aside>
+<div class="school-badge">
+    <span class="student-label">STUDENT AT</span>
+    <img src="assets/isart.png" alt="ISART Digital" class="school-logo">
+</div>
+
+    <main>
+
+
+        <section id="accueil" class="section-bio">
+            <div class="bio-content">
+                <h2 class="title-decor">My Story</h2>
+                <div class="bio-text">
+    <p>My journey in the gaming world didn't begin in front of a screen, but <strong class="shootable" data-target="c6">around a table</strong>. Playing board games taught me to <strong>dissect</strong> mechanics before I ever touched a game engine: <strong>understanding</strong> the balance of rules, the importance of player chemistry, and the satisfaction of a well-oiled system. This <strong>curiosity</strong> naturally extended to video games as I grew up, where I learned to <strong>observe</strong> level architecture, environmental storytelling, and, of course, the mechanics themselves.</p>
+
+    <p>My approach to Game Design is the result of a balance between <strong>precision</strong> and <strong>emotion</strong>.</p>
+
+    <p>Passionate about the works of <strong class="shootable" data-target="c2">Tolkien</strong> and the density of universes like those of <strong>Cyberpunk 2077</strong> or <strong class="shootable" data-target="c5">League of Legends</strong>, I see Narrative Design as complex architecture where even the smallest metaphorical detail reinforces <strong>immersion</strong>.</p>
+
+    <p>This pursuit of precision and emotion is also reflected in my inspirations, such as <strong class="shootable" data-target="c4">Frédéric Chopin</strong>: from my Franco-Polish roots, I inherited a sensitivity for virtuoso complexity placed at the service of emotion. This translates even more into my approach to UX and Game Feel: an invisible technical complexity that allows the player to feel a <strong>pure and fluid emotion</strong>.</p>
+
+    <p>On the court, my experience with <strong class="shootable" data-target="c3">volleyball</strong> gave me a sharp understanding of <strong>collective dynamics</strong> and the <strong>transmission of shared emotions</strong>. Whether through the mechanical depth of <strong class="shootable" data-target="c1">Rocket League</strong> or the strategic demands of roguelikes, I strive to seek experiences where system precision meets the satisfaction of pushing one's limits.</p>
+
+    <p>My goal is simple: to <strong>design</strong> rich worlds and deep mechanics that, once in hand, transform every session into an <strong>unforgettable</strong> moment of synergy.</p>
+</div>
+            </div>
+            <div class="bio-images">
+                <div class="circle c1" data-title="Rocket League : Precision and Complexity"></div> 
+		<div class="circle c2" data-title=" J.R.R Tolkien : Narrative Architecture"></div>
+                <div class="circle c3" data-title="Volley-Ball : Team Spirit" ></div>
+		<div class="circle c4" data-title="F. Chopin : Emotional and Artistic Sensitivity"></div>
+		<div class="circle c5" data-title="League of Legends : Diversity"></div>
+		<div class="circle c6" data-title=" My father's board game association : Where it all began"></div>
+            </div>
+        </section>
+
+        <section id="competences" class="section-skills">
+            <div class="section-header">
+                <span class="big-number">01</span>
+                <h2>SKILLS</h2>
+            </div>
+           <div class="skills-container">
+
+    <div class="skill-category">
+        <h3>TECH & ENGINE</h3>
+        <div class="skill-grid">
+<div class="skill-card">
+    <img src="assets/unity.png" alt="Unity" class="skill-icon">
+    <span>Unity</span> </div>
+
+<div class="skill-card">
+    <img src="assets/csharp.png" alt="C#" class="skill-icon">
+    <span>C# / Visual Scripting</span>
+</div>
+            <div class="skill-card">
+                <img src="assets/fork.png" alt="Fork" class="skill-icon">
+                <span>Git / Fork</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="skill-category">
+        <h3>DESIGN</h3>
+        <div class="skill-grid">
+            <div class="skill-card"><span>Game Design</span></div>
+            <div class="skill-card"><span>Level Design</span></div>
+            <div class="skill-card"><span>Narrative Design</span></div>
+            <div class="skill-card"><span>UX / UI</span></div>
+            <div class="skill-card"><span>System Design</span></div>
+        </div>
+    </div>
+
+    <div class="skill-category">
+        <h3>TOOLS</h3>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <img src="assets/figma.png" alt="Figma" class="skill-icon">
+                <span>Figma</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/blender.png" alt="Blender" class="skill-icon">
+                <span>Blender</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/excel.png" alt="Excel" class="skill-icon">
+                <span>Excel</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/sheets.png" alt="Sheets" class="skill-icon">
+                <span>Google Sheets</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/notion.png" alt="Notion" class="skill-icon">
+                <span>Notion</span>
+            </div>
+            <div class="skill-card">
+                <span>Board Games</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+        </section>
+<section id="projets" class="projects-section">
+    <h2 class="section-title">02 <span class="highlight">PROJECTS</span></h2>
+    
+   <div class="projects-grid">
+
+<div class="project-card video-trigger" data-video="assets/chrome_trailer.mp4">
+    
+    <div class="project-bg" style="background-image: url('assets/Glados_Chromestesia_Logo.png');"></div>
+    
+  <video class="project-video-bg" loop muted preload="none" playsinline>
+        <source src="assets/chrome_trailer.mp4" type="video/mp4">
+    </video>
+    
+    <div class="project-content">
+        <span class="project-type"> 2.5D PLATFORMER</span>
+        <h3>CHROMESTESIA</h3>
+        
+        <div class="project-meta">
+            <span><i class="fa-solid fa-users"></i> 10 Students</span>
+            <span><i class="fa-regular fa-clock"></i> 3 Months</span>
+            <span><i class="fa-brands fa-unity"></i> Unity</span>
+        </div>
+
+        <div class="project-details">
+            <p>A 2.5D Platformer based on a sound and color switch mechanic</p>
+            <div class="project-tags">
+                <span>LEVEL DESIGN</span>
+                <span>GAME DESIGN</span>
+                <span>C#</span>
+                <span>Fmod</span>
+                <span>Unity</span>
+            </div>
+            <div class="action-buttons">
+    <button class="btn-play">TRAILER <i class="fa-solid fa-play"></i></button>
+    
+    <button class="btn-details-trigger" data-modal="modal-glados">
+        <i class="fa-solid fa-folder-open"></i> MORE DETAILS
+    </button>
+</div>
+        </div>
+    </div> 
+    </div>
+<div class="project-card video-trigger" data-video="assets/bloodlust_trailer.mp4">
+    
+    <div class="project-bg" style="background-image: url('assets/bloodlust.png');"></div>
+    
+    <video class="project-video-bg" loop muted preload="none" playsinline>
+        <source src="assets/bloodlust_trailer.mp4" type="video/mp4">
+    </video>
+    
+    <div class="project-content">
+        <span class="project-type">ACTION / BRAWLER</span>
+        <h3>BLOODLUST</h3>
+        
+        <div class="project-meta">
+            <span><i class="fa-solid fa-users"></i> 5 Students</span>
+            <span><i class="fa-regular fa-clock"></i> 2-3 Months</span>
+            <span><i class="fa-brands fa-unity"></i> Unity</span>
+        </div>
+
+        <div class="project-details">
+            <p>A visceral action game focused on "game feel" and the impact of blows. Manage hordes and perform dynamic combos.</p>
+            <div class="project-tags">
+                <span>COMBAT DESIGN</span>
+                <span>GAME FEEL</span>
+                <span>JUICE</span>
+                <span>LEVEL DESIGN</span>
+            </div>
+            <div class="action-buttons">
+    <button class="btn-play">TRAILER <i class="fa-solid fa-play"></i></button>
+    
+    <button class="btn-details-trigger" data-modal="modal-bloodlust">
+        <i class="fa-solid fa-folder-open"></i> MORE DETAILS
+    </button>
+</div>
+        </div>
+    </div>
+
+</div>    
+<div class="project-card video-trigger" data-video="assets/ungor_trailer.mp4">
+    
+    <div class="project-bg" style="background-image: url('assets/ungor_bok.jpg');"></div>
+    
+    <video class="project-video-bg" loop muted preload="none" playsinline>
+        <source src="assets/ungor_trailer.mp4" type="video/mp4">
+    </video>
+    
+    <div class="project-content">
+        <span class="project-type">ONE BUTTON GAME / PLATFORMER</span>
+        <h3>UNGOR BOK</h3>
+        
+        <div class="project-meta">
+            <span><i class="fa-solid fa-user"></i> Solo</span>
+            <span><i class="fa-regular fa-clock"></i> 3 Months</span>
+            <span><i class="fa-brands fa-unity"></i> Unity</span>
+        </div>
+
+        <div class="project-details">
+            <p>Platformer One Button Game based on a grappling hook mechanic.</p>
+            <div class="project-tags">
+                <span>GAME DESIGN</span>
+                <span>LEVEL DESIGN</span>
+                <span>C#</span>
+                <span>3C</span>
+                <span>GAME FEEL</span>
+            </div>
+            <div class="action-buttons">
+    <button class="btn-play">TRAILER <i class="fa-solid fa-play"></i></button>
+    
+    <button class="btn-details-trigger" data-modal="modal-ungor">
+        <i class="fa-solid fa-folder-open"></i>MORE DETAILS
+    </button>
+</div>
+        </div>
+    </div>
+
+</div>    <div class="project-card btn-details-trigger" data-modal="modal-soisy">
+    
+    <div class="project-bg" style="background-image: url('assets/stj.png'); background-size: contain; background-color: #15151e;"></div>
+    
+    <div class="project-content">
+        <span class="project-type">EVENT / BOARD GAME</span>
+        <h3>SOISY TON JEU</h3>
+        
+        <div class="project-meta">
+            <span><i class="fa-solid fa-user-tie"></i> Staff Helper and Member</span>
+            <span><i class="fa-regular fa-calendar"></i> Annual</span>
+            <span><i class="fa-solid fa-dice-d20"></i> Asso</span>
+        </div>
+
+        <div class="project-details">
+            <p>Helping the organization of regular events.</p>
+            <div class="project-tags">
+                <span>EVENT</span>
+                <span>BOARD GAME</span>
+                <span>COMMUNITY</span>
+            </div>
+            
+            <button class="btn-play">
+                DISCOVER <i class="fa-solid fa-folder-open"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="project-card btn-details-trigger" data-modal="modal-mh">
+    
+    <div class="wip-ribbon">WORK IN PROGRESS</div>
+
+    <div class="project-bg" style="background-image: url('assets/mh.jpg');"></div>
+    
+    <div class="project-content">
+        <span class="project-type">UI REDESIGN / SYSTEM ANALYSIS</span>
+        <h3>MONSTER HUNTER UI REDESIGN</h3>
+        
+        <div class="project-meta">
+            <span><i class="fa-solid fa-user-group"></i> Duo</span>
+            <span><i class="fa-solid fa-book"></i> Document</span>
+            <span><i class="fa-solid fa-pen-ruler"></i> UI/UX</span>
+        </div>
+
+        <div class="project-details">
+            <p>Interface redesign project in progress.</p>
+            <div class="project-tags">
+                <span>UI DESIGN</span>
+                <span>UX RESEARCH</span>
+                <span>WIREFRAMING</span>
+            </div>
+            
+            <button class="btn-play">
+               SEE THE PROJECT'S PROGRESS <i class="fa-solid fa-helmet-safety"></i>
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+<section id="parcours" class="section-timeline">
+    <div class="section-header">
+        <span class="big-number">03</span>
+        <h2>MY BACKGROUND</h2>
+    </div>
+    
+    <div class="timeline">
+        <div class="timeline-progress-bar" id="xp-bar"></div>
+        <div class="timeline-block">
+            <div class="timeline-icon sorbonne-icon">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <div class="date">2023 - 2024</div>
+            <h3>Bachelor's in Musicology</h3>
+            <span class="institution">La Sorbonne University</span>
+            <p>
+                Developing academic rigor and analyzing complex structures. 
+                <br><em>Key takeaway:</em> I learned how to manage <strong>rhythm, pacing, and harmony</strong>—skills I now transpose into Level Design flows and Game Feel.
+            </p>
+        </div>
+
+        <div class="timeline-block">
+            <div class="timeline-icon isart-icon">
+                <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <div class="date">2024 - PRESENT</div>
+            <h3>Master's in Game Design</h3>
+            <span class="institution">ISART Digital Paris</span>
+            <p>
+                Full-cycle production experience on Unity (C#). Specializing in <strong>Game Feel and UX</strong>.
+                <br><em>Key takeaway:</em> Learning to bridge the gap between creative intentions and technical constraints.
+            </p>
+        </div>
+
+        <div class="timeline-block future-block">
+            <div class="timeline-icon future-icon">
+                <i class="fa-solid fa-crosshairs"></i>
+            </div>
+            <div class="date">STARTING MAY 2026 (Example)</div>
+            <h3>Looking for Internship / Job</h3>
+            <span class="institution">Game Designer / Level Designer / UX Designer</span>
+            <p>
+                Ready to join a team and tackle new challenges. Open to opportunities in France.
+            </p>
+            <a href="#contact" class="timeline-cta">HIRE ME <i class="fa-solid fa-arrow-down"></i></a>
+        </div>
+
+    </div>
+</section>
+
+        <footer id="contact">
+    <div class="footer-container">
+        
+        <div class="contact-header">
+            <span class="big-number">04</span>
+            <h2>READY TO START ?</h2>
+            <p class="subtitle">
+                Currently looking for <strong>Game Design</strong> & <strong>Level Design</strong> opportunities.
+                <br>Available starting <span class="highlight-text">May 2026</span>.
+            </p>
+        </div>
+
+        <div class="contact-hub">
+            
+            <div class="hub-card email-card" onclick="copyEmail()">
+                <div class="icon-box">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="card-info">
+                    <span class="label">DROP ME A LINE</span>
+                    <span class="value">melvyngellee@gmail.com</span>
+                </div>
+                <div class="copy-feedback" id="copy-msg">COPIED! <i class="fa-solid fa-check"></i></div>
+            </div>
+
+            <a href="https://www.linkedin.com/in/melvyn-gellée-7b75701bb/" target="_blank" class="hub-card linkedin-card">
+                <div class="icon-box">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <div class="card-info">
+                    <span class="label">PROFESSIONAL PROFILE</span>
+                    <span class="value">Let's Connect</span>
+                </div>
+                <i class="fa-solid fa-arrow-right-long arrow-icon"></i>
+            </a>
+
+            <a href="https://melvyng.itch.io" target="_blank" class="hub-card itch-card">
+                <div class="icon-box">
+                    <i class="fa-brands fa-itch-io"></i>
+                </div>
+                <div class="card-info">
+                    <span class="label">PLAY MY GAMES</span>
+                    <span class="value">Itch.io Portfolio</span>
+                </div>
+                <i class="fa-solid fa-arrow-right-long arrow-icon"></i>
+            </a>
+
+            <a href="assets/CV_Melvyn_Gellee.pdf" target="_blank" class="hub-card resume-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-file-pdf"></i>
+                </div>
+                <div class="card-info">
+                    <span class="label">GRAB MY RESUME</span>
+                    <span class="value">Download PDF</span>
+                </div>
+                <i class="fa-solid fa-download arrow-icon"></i>
+            </a>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Melvyn Gellée | Coded from scratch with Passion.</p>
+        </div>
+    </div>
+</footer>
+    </main>
+
+    <a href="assets/CV_Melvyn_Gellee.pdf" target="_blank" class="hud-cv-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <i class="fa-solid fa-file-arrow-down"></i>
+    <div class="text-cv">MON CV</div>
+</a>
+<div id="video-modal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span> <video controls id="full-screen-video">
+            <source src="" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+    </div>
+</div>
+<div id="modal-glados" class="project-modal">
+    <div class="modal-container">
+        <span class="close-details">&times;</span>
+        
+        <div class="modal-header">
+            <h2>CHROMESTESIA</h2>
+            <span class="modal-subtitle">2.5D PLATFORMER - UNITY</span>
+        </div>
+
+        <div class="modal-scroll-content">
+            <div class="modal-sidebar-info">
+                <div class="info-block">
+                    <h4>MY ROLE</h4>
+                    <p>Game Designer & Level Designer</p>
+                </div>
+                <div class="info-block">
+                    <h4>THE TEAM</h4>
+                    <p>10 Students (ISART Digital)</p>
+                    <p>6 Game Designers</p>
+                    <p>2 Game Programmers</p>
+                    <p>2 Sound Designers</p>
+                </div>
+                <div class="info-block">
+                    <h4>TECHNOLOGIES</h4>
+                    <p>Unity, C#, Excel, Miro</p>
+                </div>
+                
+                <div class="info-downloads">
+                    <p style="font-size: 0.8rem; color: #888; margin-bottom: 10px;">Downloads:</p>
+                    <a href="assets/docs/chromesthesia/concept_doc.pdf" target="_blank" class="dl-btn">
+                        <i class="fa-solid fa-file-pdf"></i> Concept Doc (PDF)
+                    </a>
+                    <a href="assets/docs/chromesthesia/ld_elements.xlsx" download class="dl-btn">
+                        <i class="fa-solid fa-file-excel"></i> LD Data (Excel)
+                    </a>
+                </div>
+            </div>
+
+            <div class="modal-main-content">
+                
+                <h3>01. CONCEPT & MOODBOARD</h3>
+                <p>In this colorful world, the player manipulates sound frequencies to create platforms. The visual atmosphere plays on the strong contrast between the dark environment and the neon gameplay elements.</p>
+                
+                <figure class="modal-figure">
+                    <img src="assets/docs/chromesthesia/colors.png" alt="Colors contrast inspiration" class="modal-img">
+                    <figcaption>Colors Inspiration</figcaption>
+                </figure>
+
+                <h3>02. PITCH DECK</h3>
+                <p>Presentation of the game concept, intended features, and artistic direction.</p>
+                
+                <div class="pdf-container">
+                    <embed src="assets/docs/chromesthesia/pitch_deck.pdf" type="application/pdf" width="100%" height="500px" />
+                </div>
+                <p style="font-size: 0.8rem; text-align: center;"><a href="assets/docs/chromesthesia/pitch_deck.pdf" target="_blank" style="color:#4a90e2;">Click here to download the PDF</a> if it doesn't appear.</p>
+
+
+<h3>03. RATIONAL LEVEL DESIGN (PLAN VS REALITY)</h3>
+<p>Drag the slider to compare the theoretical flow on Miro (Left) and the final implementation in Unity (Right).</p>
+
+<div class="comparison-slider">
+    
+    <div class="c-image-wrapper">
+        <img src="assets/docs/chromesthesia/screen_3.jpg" alt="Unity Version">
+        <span class="c-label after">UNITY (FINAL)</span>
+    </div>
+
+    <div class="c-image-wrapper overlay-image">
+        <img src="assets/docs/chromesthesia/ld_process_miro.png" alt="Miro Plan">
+        <span class="c-label before">MIRO (PLAN)</span>
+    </div>
+
+    <input type="range" min="0" max="100" value="50" class="c-slider" id="sliderInput">
+
+    <div class="c-slider-line">
+        <div class="c-slider-button">
+            <i class="fa-solid fa-left-right"></i>
+        </div>
+    </div>
+
+</div>
+                
+                <div style="background: rgba(30, 115, 50, 0.1); border: 1px solid #1e7332; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0;">
+                    <p style="margin-top: 0; color: #ccc;">Access the full balancing matrix and formulas:</p>
+                    <a href="assets/docs/chromesthesia/ld_elements.xlsx" download class="btn-play" style="display: inline-block; text-decoration: none; margin-top: 10px;">
+                        <i class="fa-solid fa-file-excel"></i> DOWNLOAD EXCEL DATA
+                    </a>
+                </div>
+
+                <div class="modal-gallery-grid">
+                    <figure>
+                        <img src="assets/docs/chromesthesia/ld_process_miro.png" alt="Miro Board">
+                        <figcaption>Miro Process</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="assets/docs/chromesthesia/ld_ideas.png" alt="LD Ideas">
+                        <figcaption>Sketching Phase</figcaption>
+                    </figure>
+                </div>
+
+                <h3>04. FINAL RENDERING (IN-GAME)</h3>
+                <p>Final integration under Unity with all systems fully functional.</p>
+                
+                <div class="modal-gallery-grid">
+                    <img src="assets/docs/chromesthesia/screen_1.jpg" alt="Gameplay 1">
+                    <img src="assets/docs/chromesthesia/screen_2.jpg" alt="Gameplay 2">
+                    <img src="assets/docs/chromesthesia/screen_3.jpg" alt="Gameplay 3">
+                    <img src="assets/docs/chromesthesia/screen_4.jpg" alt="Gameplay 4">
+                    <img src="assets/docs/chromesthesia/screen_5.png" alt="Gameplay 5">
+                    <img src="assets/docs/chromesthesia/screen_6.png" alt="Gameplay 6">
+                    <img src="assets/docs/chromesthesia/screen_7.png" alt="Gameplay 7">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal-bloodlust" class="project-modal">
+    <div class="modal-container">
+        <span class="close-details">&times;</span>
+        
+        <div class="modal-header">
+            <h2>BLOODLUST</h2>
+            <span class="modal-subtitle">ACTION BRAWLER - UNITY</span>
+        </div>
+
+        <div class="modal-scroll-content">
+            <div class="modal-sidebar-info">
+                <div class="info-block">
+                    <h4>MY ROLE</h4>
+                    <p>GD, LD & Lead Sound Designer</p>
+                </div>
+                
+                <div class="info-downloads">
+                    
+                    <p class="dl-category">PROJECT MANAGEMENT</p>
+                    <a href="https://trello.com/invite/b/68e3b88d804d1af459099ed2/ATTIea3887cd99880cda89eef53f3ffd83403107C3F5/brawler-3d-brotherhood" target="_blank" class="dl-btn">
+                        <i class="fa-brands fa-trello"></i> Access Trello Board
+                    </a>
+
+                    <p class="dl-category">GAME DESIGN DOCS</p>
+                    <a href="assets/docs/bloodlust/gdd.pdf" target="_blank" class="dl-btn">
+                        <i class="fa-solid fa-book"></i> Game Design Doc
+                    </a>
+                    <a href="assets/docs/bloodlust/gamefeel_doc.pdf" target="_blank" class="dl-btn">
+                        <i class="fa-solid fa-hand-fist"></i> Game Feel Doc
+                    </a>
+                    <a href="assets/docs/bloodlust/game_concept_v1.pdf" target="_blank" class="dl-btn">
+                        <i class="fa-solid fa-lightbulb"></i> Initial Concept (V1)
+                    </a>
+                    <a href="assets/docs/bloodlust/concept_explanation_playtest.pdf" target="_blank" class="dl-btn">
+                        <i class="fa-solid fa-clipboard-question"></i> Playtest Briefing Doc
+                    </a>
+
+                    <p class="dl-category">DATA & SYSTEM DESIGN</p>
+                    <a href="assets/docs/bloodlust/ennemies.xlsx" download class="dl-btn">
+                        <i class="fa-solid fa-skull"></i> Enemy Stats & Behavior
+                    </a>
+                    <a href="assets/docs/bloodlust/sound_and_proglists.xlsx" download class="dl-btn">
+                        <i class="fa-solid fa-file-audio"></i> Sound & Prog Lists
+                    </a>
+                    <a href="assets/docs/bloodlust/debug_doc.xlsx" download class="dl-btn">
+                        <i class="fa-solid fa-bug"></i> QA & Debug Log
+                    </a>
+                    <a href="assets/docs/bloodlust/pres_alpha.pdf" target="_blank" class="dl-btn">
+                        <i class="fa-solid fa-person-chalkboard"></i> Alpha Presentation
+                    </a>
+                </div>
+            </div>
+
+            <div class="modal-main-content">
+                
+                <h3>01. THE PITCH</h3>
+                <p>BloodLust is a fast-paced brawler where every hit must be felt. You play as a vampire seeking revenge.</p>
+                <p>The core gameplay revolves around crowd management and the visceral satisfaction of combat (Juice). The goal is to strike enemies until they splatter blood, creating zones where you can execute them.</p>
+
+                <figure class="modal-figure">
+                    <img src="assets/docs/bloodlust/screenshot03.png" alt="Bloodlust Combat" class="modal-img">
+                    <figcaption>Visceral Action & Gore Aesthetics</figcaption>
+                </figure>
+
+                <h3>02. MY RESPONSIBILITIES</h3>
+                <p>As a Game Designer and Lead Sound Designer, my focus was on the "Game Feel":</p>
+                <ul>
+                    <li><strong>3C & Combat Design:</strong> Iterating on inertia, attack timings, and input windows.</li>
+                    <li><strong>Level Design:</strong> Creating arenas that encourage crowd control.</li>
+                    <li><strong>Sound Design (Tech):</strong> Research and implementation of adaptive audio using Visual Scripting.</li>
+                </ul>
+
+                <h3>03. TECHNICAL DESIGN & DATA</h3>
+                <p>One of my main tasks was to structure the data for the enemies (behaviors, stats, spawn distribution) and manage the audio assets.</p>
+                
+                <div style="background: rgba(100, 0, 0, 0.1); border: 1px solid #500000; padding: 15px; border-radius: 4px; display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                    <i class="fa-solid fa-skull-crossbones" style="font-size: 2rem; color: #cf0000;"></i>
+                    <div>
+                        <strong style="color: #cf0000;">Enemy System Data</strong>
+                        <p style="margin: 0; font-size: 0.85rem; color: #aaa;">
+                            Full breakdown of enemy AI behaviors, statistics balancing, and level distribution. 
+                            (Available in Sidebar)
+                        </p>
+                    </div>
+                </div>
+
+                <p style="font-size: 0.9rem;">
+                    <i class="fa-brands fa-trello" style="color: #cf0000;"></i> 
+                    Check out our <a href="https://trello.com/invite/b/68e3b88d804d1af459099ed2/ATTIea3887cd99880cda89eef53f3ffd83403107C3F5/brawler-3d-brotherhood" target="_blank" style="color: #cf0000; text-decoration: underline;">Project Management Board on Trello</a>.
+                </p>
+
+                <h3>04. IN-GAME GALLERY</h3>
+                <div class="modal-gallery-grid">
+                    <img src="assets/docs/bloodlust/screenshot01.png" alt="Gameplay 1">
+                    <img src="assets/docs/bloodlust/screenshot02.png" alt="Gameplay 2">
+                    <img src="assets/docs/bloodlust/screenshot04.png" alt="Gameplay 4">
+                    <img src="assets/docs/bloodlust/screenshot05.png" alt="Gameplay 5">
+                    <img src="assets/docs/bloodlust/screenshot06.png" alt="Gameplay 6">
+                    <img src="assets/docs/bloodlust/screenshot07.png" alt="Gameplay 7">
+                    <img src="assets/docs/bloodlust/screenshot08.png" alt="Gameplay 8">
+                    <img src="assets/docs/bloodlust/screenshot09.png" alt="Gameplay 9">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal-ungor" class="project-modal">
+    <div class="modal-container">
+        <span class="close-details">&times;</span>
+        
+        <div class="modal-header">
+            <h2>UNGOR BOK</h2>
+            <span class="modal-subtitle">ONE BUTTON PLATFORMER - UNITY</span>
+        </div>
+
+        <div class="modal-scroll-content">
+            <div class="modal-sidebar-info">
+                <div class="info-block">
+                    <h4>MY ROLE</h4>
+                    <p>Solo Dev (GD, LD & Programmer)</p>
+                </div>
+                <div class="info-block">
+                    <h4>THE TEAM</h4>
+                    <p>Solo Project (3 Months)</p>
+                </div>
+                <div class="info-block">
+                    <h4>TECHNOLOGIES</h4>
+                    <p>Unity, C#</p>
+                </div>
+                
+                <div class="info-downloads">
+                    <p class="dl-category">GAME DESIGN</p>
+                    
+                    <a href="assets/docs/ungor/one_page_document_concept.pdf" target="_blank" class="dl-btn">
+                        <i class="fa-solid fa-file-invoice"></i> One Page Concept
+                    </a>
+                    
+                    <p class="dl-category">PLAY THE GAME</p>
+                    <a href="https://melvyng.itch.io/ungor-bok" target="_blank" class="dl-btn">
+                        <i class="fa-brands fa-itch-io"></i> Play on Itch.io
+                    </a>
+                </div>
+            </div>
+
+            <div class="modal-main-content">
+                
+                <h3>01. THE PITCH</h3>
+                <p>Ungor Bok is a platform game with one major constraint: <strong>the entire game is played with a single button</strong>.</p>
+                <p>The player controls a dwarf explorer in a legendary cave and must overcome platforming obstacles using only a grappling hook. Timing and precision are key.</p>
+
+                <figure class="modal-figure">
+                    <img src="assets/ungor_bok.jpg" alt="Ungor Bok Key Art" class="modal-img">
+                    <figcaption>One Button. One Grappling Hook. Infinite Falls.</figcaption>
+                </figure>
+
+                <h3>02. MY RESPONSIBILITIES (SOLO DEV)</h3>
+                <p>As the sole developer, I managed the entire production pipeline:</p>
+                <ul>
+                    <li><strong>Level Design:</strong> Creating "Puzzle rooms" where understanding the momentum is more important than reflexes.</li>
+                    <li><strong>Game Feel & 3C:</strong> Iterating on the grappling hook physics to make it satisfying (Juice, Screen Shake, Particles).</li>
+                    <li><strong>Programming:</strong> Implementing the state machine for the character and the physics calculations.</li>
+                </ul>
+
+                <h3>03. TECHNICAL CHALLENGE: THE FEEDBACK</h3>
+                <p>The main difficulty was accessibility. The player needed to intuitively understand the grappling angle without complex UI.</p>
+                <p><strong>Solution:</strong> I implemented a rotating arrow around the player. It acts as a diegetic crosshair, helping the player time their input perfectly.</p>
+
+                <h3>04. GRAPPLING HOOK SYSTEM (C#)</h3>
+                <p>Code snippet used to create the grappling hook logic (Physics & Visuals).</p>
+
+                <div class="code-viewer-container">
+                    <div class="code-header">
+                        <span class="file-name"><i class="fa-brands fa-unity"></i> Tutorial_GrapplingGun.cs</span>
+                        <span class="lang-badge">C#</span>
+                    </div>
+                    
+                    <div class="code-content-wrapper" id="ungor-code-wrapper">
+                        <pre><code class="language-csharp">
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Tutorial_GrapplingGun : MonoBehaviour
+{
+    [Header("Scripts Ref:")]
+    public Tutorial_GrapplingRope grappleRope;
+
+    [Header("Layers Settings:")]
+    [SerializeField] private bool grappleToAll = false;
+    [SerializeField] private int grappableLayerNumber = 9;
+
+    [Header("Main Camera:")]
+    public Camera m_camera;
+
+    [Header("Transform Ref:")]
+    public Transform gunHolder;
+    public Transform gunPivot;
+    public Transform firePoint;
+    public Transform grappleIndicator; // La flèche qui tourne autour du joueur
+
+    [Header("Physics Ref:")]
+    public SpringJoint2D m_springJoint2D;
+    public Rigidbody2D m_rigidbody;
+
+    [Header("Rotation:")]
+    [SerializeField] private bool rotateOverTime = true;
+    [Range(0, 60)] [SerializeField] private float rotationSpeed = 4;
+    [SerializeField] private float indicatorRotationSpeed = 100; 
+    [SerializeField] private float indicatorRadius = 1.5f;
+
+    [Header("Distance:")]
+    [SerializeField] private bool hasMaxDistance = false;
+    [SerializeField] public float maxDistnace = 20;
+
+    private void Update()
+    {
+        RotateIndicator();
+        UpdateIndicatorColor();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SetGrapplePoint();
+        }
+        else if (Input.GetKey(KeyCode.Space))
+        {
+            if (grappleRope.enabled)
+            {
+                RotateGun(grapplePoint, false);
+            }
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            ResetGrapple();
+        }
+    }
+
+    void RotateIndicator()
+    {
+        indicatorAngle += indicatorRotationSpeed * Time.deltaTime;
+        float x = Mathf.Cos(indicatorAngle * Mathf.Deg2Rad) * indicatorRadius;
+        float y = Mathf.Sin(indicatorAngle * Mathf.Deg2Rad) * indicatorRadius;
+        grappleIndicator.position = gunPivot.position + new Vector3(x, y, 0);
+        grappleIndicator.up = (grappleIndicator.position - gunPivot.position).normalized;
+    }
+
+    void UpdateIndicatorColor()
+    {
+        Vector2 direction = (grappleIndicator.up).normalized;
+        RaycastHit2D hit = Physics2D.Raycast(firePoint.position, direction, maxDistnace, 1 << grappableLayerNumber);
+
+        if (indicatorSprite != null)
+        {
+             indicatorSprite.color = (hit.collider != null && (hit.collider.gameObject.layer == grappableLayerNumber || grappleToAll)) ? colorGrapplable : colorNotGrapplable;
+        }
+    }
+
+    void SetGrapplePoint()
+    {
+        Vector2 direction = grappleIndicator.up.normalized;
+        RaycastHit2D hit = Physics2D.Raycast(firePoint.position, direction, maxDistnace, 1 << grappableLayerNumber);
+
+        if (hit.collider == null)
+        {
+            ResetGrapple();
+            return;
+        }
+
+        grapplePoint = hit.point;
+        grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position;
+        grappleRope.enabled = true;
+    }
+
+    public void Grapple()
+    {
+        m_springJoint2D.autoConfigureDistance = false;
+
+        if (!launchToPoint)
+        {
+            m_springJoint2D.connectedAnchor = grapplePoint;
+            m_springJoint2D.enabled = true;
+        }
+    }
+}
+                        </code></pre>
+                        <div class="code-overlay" id="code-overlay"></div>
+                    </div>
+
+                    <button class="btn-see-all-code" id="btn-toggle-code">
+                        SEE ALL CODE <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                </div>
+
+                <h3>05. IN-GAME GALLERY</h3>
+                <div style="margin-top: 15px;">
+                    <img src="assets/docs/ungor/screen_1.jpg" alt="Ingame Screenshot" style="width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div></div><div id="modal-mh" class="project-modal">
+    <div class="modal-container">
+        <span class="close-details">&times;</span>
+        
+        <div class="modal-header">
+            <h2>MONSTER HUNTER UI REDESIGN</h2>
+            <span class="modal-subtitle">UI AND FEEDBACK ANALYSIS</span>
+        </div>
+
+        <div class="modal-scroll-content">
+            <div class="modal-sidebar-info">
+                <div class="info-block">
+                    <h4>MY ROLE</h4>
+                    <p>UX Analyst and Researcher & UI Designer</p>
+                </div>
+                <div class="info-block">
+                    <h4>FORMAT</h4>
+                    <p>Figma UI Propositions (Duo)</p>
+                </div>
+                <div class="info-block">
+                    <h4>TOOLS</h4>
+                    <p>Figma, The Game Itself, Forums</p>
+                </div>
+                
+                <div class="info-downloads">
+                </div>
+            </div>
+
+            <div class="modal-main-content">
+                <h3>01. GOAL</h3>
+                <p>The goal is to reverse engineer <em>Monster Hunter: World</em> to improve the game's user interface (UI).</p>
+
+                <h3>02. FEEDBACKS ANALYSIS</h3>
+                <p>I played the games for several hours and I searched for players feedbacks on forums like reddit:</p>
+                <ul>
+                    <li><strong>Main Problem :</strong> Layout and readability.</li>
+                </ul>
+
+                <h3>03. UI SCREENSHOTS</h3>
+                <img src="assets/mh_ui.png" alt="UI Screenshots" class="modal-img">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-soisy" class="project-modal">
+    <div class="modal-container">
+        <span class="close-details">&times;</span>
+        
+        <div class="modal-header">
+            <h2>SOISY TON JEU</h2>
+            <span class="modal-subtitle">EVENT ORGANIZATION & BOARD GAME</span>
+        </div>
+
+        <div class="modal-scroll-content">
+            <div class="modal-sidebar-info">
+                <div class="info-block">
+                    <h4>MY ROLE</h4>
+                    <p>STAFF HELPER AND MEMBER</p>
+                </div>
+                <div class="info-block">
+                    <h4>CONTEXT</h4>
+                    <p>Playful Association</p>
+                </div>
+                <div class="info-block">
+                    <h4>SKILLS</h4>
+                    <p>Management, Pedagogy</p>
+                </div>
+                
+                <div class="info-downloads">
+
+                </div>
+            </div>
+
+            <div class="modal-main-content">
+                <h3>01. THE PROJECT</h3>
+                <p>"Soisy Ton Jeu" is an association that organizes game nights several times a month, bringing together enthusiasts and newcomers around board games.</p>
+
+                <h3>02.PEDAGOGY</h3>
+                <p>My role involves explaining complex rules to a large audience (onboarding) in just a few minutes. It's an excellent exercise for clarity and UX design.</p>
+
+                <h3>03. COMMUNITY MANAGEMENT</h3>
+                <p>Building a community of players, organizing parties and managing gaming conflicts are integral parts of the experience, strengthening my skills in player psychology.</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="app.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": "Melvyn Gellée",
+  "jobTitle": "Game Designer & Level Designer",
+  "url": "https://ton-site-portfolio.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/melvyn-gellée-7b75701bb/",
+    "https://melvyng.itch.io
+  ],
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "ISART Digital"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Sorbonne Université"
+    }
+  ],
+  "knowsAbout": ["Game Design", "Level Design", "Unity", "C#", "Sound Design", "Game Feel"]
+}
+</script>
+</body>
+</html>
