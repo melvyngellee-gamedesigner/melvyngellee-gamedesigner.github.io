@@ -961,3 +961,52 @@ footer#contact::before {
     .contact-hub { grid-template-columns: 1fr; gap: 15px; }
     .hub-card { padding: 15px; }
 }
+/* --- BOUTON LIRE LA SUITE (INVISIBLE SUR ORDI) --- */
+.btn-read-more { display: none; }
+
+/* --- MODIFICATIONS MOBILE SPÉCIFIQUES --- */
+@media (max-width: 768px) {
+    
+    /* 1. ON CHANGE L'ORDRE : IMAGES EN HAUT, TEXTE EN BAS */
+    .section-bio { display: flex; flex-direction: column; }
+    
+    .bio-images { order: 1; margin-top: 0; margin-bottom: 20px; } /* Les images montent */
+    .bio-content { order: 2; } /* Le texte descend */
+
+    /* 2. ON CACHE LE TEXTE EN TROP */
+    /* On cache tous les paragraphes à partir du 2ème */
+    .bio-text p:nth-child(n+2) {
+        display: none;
+    }
+    
+    /* On montre le 1er paragraphe normalement */
+    .bio-text p:first-child {
+        margin-bottom: 5px;
+        font-size: 1rem;
+        color: #fff; /* Plus clair pour l'intro */
+    }
+
+    /* 3. STYLE DU BOUTON "READ MORE" */
+    .btn-read-more {
+        display: block; /* Visible sur mobile */
+        margin: 15px auto 0;
+        background: transparent;
+        border: 1px solid var(--accent-blue);
+        color: var(--accent-blue);
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-family: var(--font-head);
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .btn-read-more:active { background: var(--accent-blue); color: #fff; }
+
+    /* 4. CLASSE "OPEN" (QUAND ON CLIQUE) */
+    /* Quand on ajoute la classe 'expanded', on affiche tout */
+    .bio-text.expanded p {
+        display: block;
+        animation: none; /* On stop l'animation d'apparition pour que ce soit instantané */
+        opacity: 1;
+    }
+}

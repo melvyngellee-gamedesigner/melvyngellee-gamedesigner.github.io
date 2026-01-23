@@ -483,3 +483,25 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach((section) => {
     observer.observe(section);
 });
+/* =========================================
+   14. MOBILE BIO READ MORE
+   ========================================= */
+const bioBtn = document.getElementById('bio-toggle-btn');
+const bioText = document.querySelector('.bio-text');
+
+if (bioBtn && bioText) {
+    bioBtn.addEventListener('click', () => {
+        // 1. On bascule la classe qui montre/cache le texte
+        bioText.classList.toggle('expanded');
+        
+        // 2. On change le texte du bouton
+        if (bioText.classList.contains('expanded')) {
+            bioBtn.innerHTML = 'SHOW LESS <i class="fa-solid fa-chevron-up"></i>';
+        } else {
+            bioBtn.innerHTML = 'READ MORE <i class="fa-solid fa-chevron-down"></i>';
+            
+            // Optionnel : remonter un peu l'écran si on referme
+            document.querySelector('.section-bio').scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+}
