@@ -655,10 +655,11 @@ footer#contact::before {
 
 .top-nav { display: none !important; } 
 
-/* CONFIGURATION DESKTOP (PC) PAR DÉFAUT */
+/* CONFIGURATION DESKTOP (PC) - MENU À GAUCHE */
 .hud-nav {
     position: fixed;
-    right: 30px;
+    /* On a changé right: 30px en left: 50px pour aligner avec le logo */
+    left: 50px; 
     top: 50%;
     transform: translateY(-50%); /* Centré verticalement */
     z-index: 1000;
@@ -689,11 +690,13 @@ footer#contact::before {
     border: 1px solid transparent;
 }
 
-/* Tooltip (Le texte qui apparaît au survol) */
+/* Tooltip (Le texte) - DOIT APPARAÎTRE À DROITE MAINTENANT */
 .hud-link::before {
     content: attr(data-tooltip);
     position: absolute;
-    right: 60px; /* À gauche de l'icône */
+    /* On annule la droite et on met à gauche */
+    right: auto; 
+    left: 60px; 
     background: #4a90e2;
     color: white;
     padding: 5px 10px;
@@ -702,21 +705,24 @@ footer#contact::before {
     font-size: 0.8rem;
     letter-spacing: 1px;
     opacity: 0;
-    transform: translateX(10px);
+    /* Animation vient de la gauche vers la droite */
+    transform: translateX(-10px); 
     pointer-events: none;
     transition: all 0.3s ease;
     white-space: nowrap;
 }
-/* Petite flèche du tooltip */
+/* Petite flèche du tooltip - DOIT POINTER VERS LA GAUCHE */
 .hud-link::after {
     content: '';
     position: absolute;
-    right: 54px;
+    right: auto;
+    left: 54px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent transparent #4a90e2; /* Pointe vers la droite */
+    /* La pointe vers la gauche demande une bordure droite colorée */
+    border-color: transparent var(--accent-blue) transparent transparent; 
     opacity: 0;
-    transform: translateX(10px);
+    transform: translateX(-10px);
     transition: all 0.3s ease;
 }
 
@@ -859,14 +865,15 @@ footer#contact::before {
         /* RESET DES PROPRIÉTÉS PC QUI CAUSENT LE BUG */
         top: auto !important; 
         right: auto !important;
-        transform: translateX(-50%) !important; /* On garde que le centrage horizontal */
+        /* IMPORTANT: On doit aussi reset le 'left' du PC sinon conflit */
+        left: 50% !important; 
+        transform: translateX(-50%) !important; 
         
         /* PROPRIÉTÉS MOBILE */
         bottom: 20px;
-        left: 50%;
         width: 90%; 
         max-width: 400px;
-        height: auto; /* Important */
+        height: auto; 
         
         border-radius: 50px; background: rgba(15, 15, 20, 0.95);
         border: 1px solid rgba(255,255,255,0.15); padding: 10px 25px;
@@ -874,7 +881,9 @@ footer#contact::before {
         flex-direction: row; justify-content: space-between;
     }
     .hud-link { width: auto; height: auto; font-size: 1.2rem; color: #666; background: transparent; }
+    /* On cache les tooltips sur mobile */
     .hud-link::before, .hud-link::after { display: none; }
+    
     .hud-link.active { color: var(--accent-blue); transform: translateY(-5px); background: transparent; box-shadow: none; }
     .hud-link.active::after {
         content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
