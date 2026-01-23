@@ -505,3 +505,39 @@ if (bioBtn && bioText) {
         }
     });
 }
+/* =========================================
+   15. MOBILE CAROUSEL AUTO-SCROLL
+   ========================================= */
+const carousel = document.querySelector('.bio-images');
+
+if (carousel) {
+    let scrollAmount = 0;
+    let scrollSpeed = 0.5; // Vitesse de défilement (plus petit = plus lent)
+    let isPaused = false;
+
+    // Fonction d'animation
+    function autoScroll() {
+        if (!isPaused && window.innerWidth <= 768) { // Seulement sur mobile
+            carousel.scrollLeft += scrollSpeed;
+            scrollAmount += scrollSpeed;
+
+            // Si on arrive au bout (ou presque), on revient au début pour boucler
+            // Note: Faire une vraie boucle infinie demande de dupliquer les images, 
+            // ici on fait un retour au début simple quand c'est fini.
+            if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - 1)) {
+                carousel.scrollLeft = 0;
+            }
+        }
+        requestAnimationFrame(autoScroll);
+    }
+
+    // Lancer l'animation
+    autoScroll();
+
+    // Arrêter si l'utilisateur touche le carrousel
+    carousel.addEventListener('touchstart', () => { isPaused = true; });
+    carousel.addEventListener('touchend', () => { 
+        // On attend 2 secondes après le relâchement avant de reprendre
+        setTimeout(() => { isPaused = false; }, 2000); 
+    });
+}

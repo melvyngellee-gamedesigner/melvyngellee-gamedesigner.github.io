@@ -672,7 +672,7 @@ footer#contact::before {
    NAVIGATION HUD (REMPLACEMENT TOP NAV)
    ========================================= */
 
-/* Supprimer l'ancienne nav si tu ne l'as pas fait dans le HTML */
+/* */
 .top-nav { display: none !important; } 
 
 .hud-nav {
@@ -796,217 +796,134 @@ footer#contact::before {
     .hud-cv-btn { display: none; }
 }
 /* =========================================
-   MOBILE OVERHAUL (VERSION RAPIDE & EFFICACE)
+   MOBILE OVERHAUL (VERSION FINALE & ANIMÉE)
    ========================================= */
 @media (max-width: 768px) {
 
-    /* 1. PERFORMANCE & NETTOYAGE */
-    #particle-canvas { display: none !important; } /* On coupe les particules */
+    /* 1. PERFORMANCE & BASE */
+    #particle-canvas { display: none !important; }
     body { overflow-x: hidden; width: 100%; }
     
-    /* 2. HEADER COMPACT */
-    .sidebar { position: relative; top: 0; left: 0; width: 100%; padding: 30px 20px 0; text-align: center; }
-    .logo-area h1 { font-size: 2.5rem; letter-spacing: 2px; }
-    .sub-logo { font-size: 0.7rem; margin-top: 5px; }
-    .school-badge { display: none; } /* On cache le badge école qui gêne */
-    main { margin-left: 0; padding: 0; width: 100%; }
+    /* 2. STICKY HEADER (NOM TOUJOURS VISIBLE) */
+    .sidebar {
+        position: fixed; /* Reste collé en haut */
+        top: 0; left: 0; width: 100%;
+        height: 70px; /* Hauteur fixe compacte */
+        padding: 0 20px;
+        background: rgba(10, 15, 25, 0.95); /* Fond sombre presque opaque */
+        backdrop-filter: blur(10px); /* Effet verre */
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        z-index: 5000; /* Au-dessus de tout */
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Centre le nom */
+        box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    }
 
-    /* 3. BIO : MODE "STORY" (SCROLL HORIZONTAL) */
-    .section-bio { flex-direction: column; padding: 40px 20px; min-height: auto; }
-    .bio-content, .bio-images { width: 100%; }
-    .title-decor { font-size: 2.5rem; text-align: center; display: block; }
+    .logo-area { text-align: center; }
+
+    /* Nom plus petit pour ne pas envahir l'écran */
+    .logo-area h1 {
+        font-size: 1.2rem; 
+        letter-spacing: 3px;
+        line-height: 1;
+        margin: 0;
+    }
     
+    /* On cache le sous-titre sur mobile pour gagner de la place */
+    .sub-logo { display: none; }
+    .school-badge { display: none; }
+
+    /* On ajoute une marge en haut du site pour compenser le header fixe */
+    main { margin-left: 0; padding: 0; width: 100%; padding-top: 90px; }
+
+    /* 3. BIO : ORDRE LOGIQUE (TEXTE -> BOUTON -> IMAGES) */
+    .section-bio {
+        display: flex; flex-direction: column;
+        padding: 0 20px 40px; /* Ajustement padding */
+    }
+    
+    /* C'EST ICI LE CHANGEMENT D'ORDRE */
+    .bio-content { order: 1; } /* Texte en PREMIER */
+    .bio-images { order: 2; margin-top: 30px; margin-bottom: 0; } /* Images en DESSOUS */
+
+    .title-decor { font-size: 2.2rem; text-align: center; margin-bottom: 20px; }
     .bio-text p { font-size: 1rem; text-align: justify; }
 
-    /* Transformation des bulles en carrousel horizontal */
-    .bio-images {
-        display: flex;
-        flex-wrap: nowrap; /* On empêche le retour à la ligne */
-        overflow-x: auto; /* Scroll horizontal */
-        scroll-snap-type: x mandatory; /* Effet magnétique */
-        gap: 15px;
-        padding-bottom: 20px; /* Place pour le scrollbar */
-        margin-top: 30px;
-        justify-content: flex-start;
-        -webkit-overflow-scrolling: touch; /* Scroll fluide iOS */
+    /* Gestion du "Read More" */
+    .bio-text p:nth-child(n+2) { display: none; }
+    .bio-text p:first-child { margin-bottom: 5px; font-size: 1rem; color: #fff; }
+    
+    .btn-read-more {
+        display: block; margin: 15px auto 0;
+        background: transparent; border: 1px solid var(--accent-blue);
+        color: var(--accent-blue); padding: 10px 25px; border-radius: 50px;
+        font-family: var(--font-head); font-size: 0.9rem; cursor: pointer;
     }
+    
+    .bio-text.expanded p { display: block; animation: none; opacity: 1; }
+
+    /* 4. CARROUSEL AUTO-SCROLL */
+    .bio-images {
+        display: flex; flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 15px;
+        padding-bottom: 10px;
+        /* On masque la barre de défilement moche */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE */
+    }
+    .bio-images::-webkit-scrollbar { display: none; /* Chrome/Safari */ }
 
     .circle {
-        flex: 0 0 200px; /* Taille fixe plus petite */
-        height: 200px;
-        scroll-snap-align: center; /* Se centre automatiquement */
-        animation: none; /* On arrête l'animation qui flotte pour la performance */
-        border-width: 2px;
+        flex: 0 0 180px; height: 180px; /* Un peu plus petit pour voir qu'il y en a d'autres */
+        animation: none; border-width: 2px;
+        /* Petite ombre interne pour le style */
+        box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
     }
-    /* Le texte de la bulle est toujours visible en bas */
     .circle::after {
-        opacity: 1; bottom: 10px; font-size: 0.7rem; 
-        background: rgba(0,0,0,0.6); width: 90%; white-space: normal; text-align: center;
+        opacity: 1; bottom: 0; font-size: 0.65rem; background: rgba(0,0,0,0.7);
+        width: 100%; padding: 5px; border-radius: 0 0 100px 100px;
     }
 
-    /* 4. SKILLS : GRILLE COMPACTE */
+    /* 5. SKILLS & PROJETS (Ajustements mineurs) */
     .section-skills { padding: 40px 20px; }
-    .skill-category h3 { font-size: 1.5rem; margin-bottom: 20px; text-align: left; }
+    .skill-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+    .skill-card { transform: none !important; }
+    .skill-card::before { background: #2a2a35; }
     
-    .skill-grid {
-        grid-template-columns: 1fr 1fr; /* 2 colonnes strictes */
-        gap: 15px;
-    }
+    .projects-section { padding: 40px 20px 120px; }
+    .project-card { height: auto; display: flex; flex-direction: column; }
+    .project-bg { position: relative; height: 200px; filter: brightness(1); }
+    .project-video-bg { display: none; }
+    .project-content { position: relative; transform: none; background: #1e1e1e; padding: 20px; opacity: 1; }
+    .project-details { opacity: 1; margin-top: 15px; display: block; }
+    .btn-details-trigger, .btn-play { width: 100%; justify-content: center; padding: 12px; margin-top: 10px; background: rgba(74, 144, 226, 0.1); border: 1px solid var(--accent-blue); color: var(--accent-blue); }
 
-    .skill-card {
-        padding: 20px 10px;
-        transform: none !important; /* Pas de 3D */
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    /* On force l'état "actif" pour que ce soit lisible sans survol */
-    .skill-card::before { background: #2a2a35; } /* Grip visible */
-
-    /* 5. PROJETS : FORMAT "CARTE CLASSIQUE" (TOUT VISIBLE) */
-    .projects-section { padding: 40px 20px 100px; } /* Marge en bas pour le menu */
-    .projects-grid { gap: 40px; }
-
-    .project-card {
-        height: auto; /* Hauteur s'adapte au contenu */
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-    }
-
-    /* L'image prend le haut */
-    .project-bg {
-        position: relative; /* Plus absolute */
-        height: 200px; /* Hauteur de l'image */
-        width: 100%;
-        filter: brightness(1); /* Image claire */
-    }
-    .project-video-bg { display: none; } /* On cache la vidéo sur mobile (trop lourd) */
-
-    /* Le contenu prend le bas (Fond uni) */
-    .project-content {
-        position: relative;
-        transform: none; /* Pas de déplacement */
-        background: #1e1e1e;
-        padding: 20px;
-        height: auto;
-        opacity: 1;
-    }
-    
-    .project-details {
-        opacity: 1; /* Toujours visible */
-        margin-top: 15px;
-        display: block;
-    }
-    
-    .project-tags { flex-wrap: wrap; margin-bottom: 15px; }
-    
-    /* Bouton bien large pour le doigt */
-    .btn-details-trigger, .btn-play {
-        width: 100%;
-        justify-content: center;
-        padding: 12px;
-        background: rgba(74, 144, 226, 0.1);
-        border: 1px solid var(--accent-blue);
-        color: var(--accent-blue);
-        margin-top: 10px;
-    }
-
-    /* 6. NAVIGATION "APP BAR" (EN BAS) */
+    /* 6. NAV BAR (App Style) */
     .hud-nav {
-        width: 90%;
-        max-width: 400px;
-        bottom: 20px;
-        border-radius: 50px;
-        background: rgba(15, 15, 20, 0.95); /* Fond très opaque pour lisibilité */
-        border: 1px solid rgba(255,255,255,0.15);
-        padding: 10px 25px;
+        width: 90%; max-width: 400px; bottom: 20px;
+        left: 50%; transform: translateX(-50%);
+        border-radius: 50px; background: rgba(15, 15, 20, 0.95);
+        border: 1px solid rgba(255,255,255,0.15); padding: 10px 25px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        flex-direction: row; justify-content: space-between;
     }
-    
-    .hud-link {
-        width: auto; height: auto;
-        font-size: 1.2rem;
-        color: #666;
-    }
-    .hud-link.active {
-        color: var(--accent-blue);
-        transform: translateY(-5px); /* Petite montée pour dire "je suis là" */
-        background: transparent;
-        box-shadow: none;
-    }
-    /* Ajout d'un point lumineux sous l'icône active sur mobile */
+    .hud-link { width: auto; height: auto; font-size: 1.2rem; color: #666; background: transparent; }
+    .hud-link::before, .hud-link::after { display: none; }
+    .hud-link.active { color: var(--accent-blue); transform: translateY(-5px); background: transparent; box-shadow: none; }
     .hud-link.active::after {
         content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
-        width: 4px; height: 4px; background: var(--accent-blue); border-radius: 50%;
-        display: block !important; opacity: 1;
+        width: 4px; height: 4px; background: var(--accent-blue); border-radius: 50%; display: block !important; opacity: 1;
     }
-
-    /* 7. MODALS (PLEIN ÉCRAN MOBILE) */
-    .modal-container {
-        width: 100%; height: 100%; border-radius: 0; border: none;
-    }
-    .modal-scroll-content {
-        flex-direction: column; padding: 20px; padding-bottom: 80px; /* Espace pour scroller */
-    }
-    .modal-sidebar-info {
-        border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1);
-        padding-bottom: 20px; margin-bottom: 20px;
-    }
+    .hud-cv-btn { display: none; }
     
-    /* 8. TIMELINE ADAPTÉE */
+    /* MODALS & TIMELINE */
+    .modal-container { width: 100%; height: 100%; border-radius: 0; border: none; }
+    .modal-scroll-content { flex-direction: column; padding: 20px; padding-bottom: 80px; }
+    .modal-sidebar-info { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 20px; }
     .timeline { padding-left: 30px; margin: 0; }
     .timeline-icon { width: 30px; height: 30px; left: -46px; font-size: 0.9rem; }
-    .timeline-progress-bar { left: 49px; } /* Ajustement barre */
-    
-    /* 9. CONTACT */
+    .timeline-progress-bar { left: 49px; }
     .contact-hub { grid-template-columns: 1fr; gap: 15px; }
-    .hub-card { padding: 15px; }
-}
-/* --- BOUTON LIRE LA SUITE (INVISIBLE SUR ORDI) --- */
-.btn-read-more { display: none; }
-
-/* --- MODIFICATIONS MOBILE SPÉCIFIQUES --- */
-@media (max-width: 768px) {
-    
-    /* 1. ON CHANGE L'ORDRE : IMAGES EN HAUT, TEXTE EN BAS */
-    .section-bio { display: flex; flex-direction: column; }
-    
-    .bio-images { order: 1; margin-top: 0; margin-bottom: 20px; } /* Les images montent */
-    .bio-content { order: 2; } /* Le texte descend */
-
-    /* 2. ON CACHE LE TEXTE EN TROP */
-    /* On cache tous les paragraphes à partir du 2ème */
-    .bio-text p:nth-child(n+2) {
-        display: none;
-    }
-    
-    /* On montre le 1er paragraphe normalement */
-    .bio-text p:first-child {
-        margin-bottom: 5px;
-        font-size: 1rem;
-        color: #fff; /* Plus clair pour l'intro */
-    }
-
-    /* 3. STYLE DU BOUTON "READ MORE" */
-    .btn-read-more {
-        display: block; /* Visible sur mobile */
-        margin: 15px auto 0;
-        background: transparent;
-        border: 1px solid var(--accent-blue);
-        color: var(--accent-blue);
-        padding: 10px 25px;
-        border-radius: 50px;
-        font-family: var(--font-head);
-        font-size: 0.9rem;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-    .btn-read-more:active { background: var(--accent-blue); color: #fff; }
-
-    /* 4. CLASSE "OPEN" (QUAND ON CLIQUE) */
-    /* Quand on ajoute la classe 'expanded', on affiche tout */
-    .bio-text.expanded p {
-        display: block;
-        animation: none; /* On stop l'animation d'apparition pour que ce soit instantané */
-        opacity: 1;
-    }
 }
