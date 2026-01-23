@@ -655,6 +655,7 @@ footer#contact::before {
 
 .top-nav { display: none !important; } 
 
+/* CONFIGURATION DESKTOP (PC) PAR DÉFAUT */
 .hud-nav {
     position: fixed;
     right: 30px;
@@ -814,10 +815,12 @@ footer#contact::before {
     
     .bio-text.expanded p { display: block; animation: none; opacity: 1; }
 
-    /* 4. CARROUSEL AUTO-SCROLL */
+    /* 4. CARROUSEL AUTO-SCROLL (Alignement corrigé) */
     .bio-images {
         display: flex; flex-wrap: nowrap;
         overflow-x: auto;
+        /* CORRECTION: On aligne au début, sinon les premiers items sont coupés */
+        justify-content: flex-start; 
         gap: 15px;
         padding-bottom: 10px;
         /* On masque la barre de défilement moche */
@@ -851,10 +854,20 @@ footer#contact::before {
     .project-details { opacity: 1; margin-top: 15px; display: block; }
     .btn-details-trigger, .btn-play { width: 100%; justify-content: center; padding: 12px; margin-top: 10px; background: rgba(74, 144, 226, 0.1); border: 1px solid var(--accent-blue); color: var(--accent-blue); }
 
-    /* 6. NAV BAR (App Style) */
+    /* 6. NAV BAR (CORRECTION BUG TAILLE GÉANTE) */
     .hud-nav {
-        width: 90%; max-width: 400px; bottom: 20px;
-        left: 50%; transform: translateX(-50%);
+        /* RESET DES PROPRIÉTÉS PC QUI CAUSENT LE BUG */
+        top: auto !important; 
+        right: auto !important;
+        transform: translateX(-50%) !important; /* On garde que le centrage horizontal */
+        
+        /* PROPRIÉTÉS MOBILE */
+        bottom: 20px;
+        left: 50%;
+        width: 90%; 
+        max-width: 400px;
+        height: auto; /* Important */
+        
         border-radius: 50px; background: rgba(15, 15, 20, 0.95);
         border: 1px solid rgba(255,255,255,0.15); padding: 10px 25px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.8);
