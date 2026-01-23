@@ -855,10 +855,27 @@ footer#contact::before {
     .bio-images::-webkit-scrollbar { display: none; /* Chrome/Safari */ }
 
     .circle {
-        flex: 0 0 180px; height: 180px; /* Un peu plus petit pour voir qu'il y en a d'autres */
-        animation: none; border-width: 2px;
-        /* Petite ombre interne pour le style */
-        box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        /* 1. TAILLE FIXE (On garde ça, c'est bon) */
+        width: 180px;
+        height: 180px;
+        flex: 0 0 180px;
+        min-width: 180px;
+        min-height: 180px;
+
+        /* 2. LE CORRECTIF IPHONE EST ICI */
+        /* "scroll" oblige l'image à rester collée au cercle */
+        background-attachment: scroll !important; 
+        background-size: cover !important; 
+        background-position: center center !important;
+        background-repeat: no-repeat;
+        
+        /* 3. ESTHÉTIQUE */
+        border-radius: 50%;
+        border: 2px solid rgba(255,255,255,0.8);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        margin-right: 15px;
+        
+        animation: none; /* Pas d'animation flottante sur mobile */
     }
     .circle::after {
         opacity: 1; bottom: 0; font-size: 0.65rem; background: rgba(0,0,0,0.7);
