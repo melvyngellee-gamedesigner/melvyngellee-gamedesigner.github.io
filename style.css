@@ -112,37 +112,28 @@ main {
     0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); }
 }
 
-/* 3. BIO : ORDRE LOGIQUE & PLEINE LARGEUR */
-    .section-bio {
-        display: flex; 
-        flex-direction: column;
-        padding: 0 20px 40px; /* Un peu de marge sur les côtés */
-        width: 100%; /* Sécurité */
-    }
-    
-    /* C'EST ICI LA CORRECTION MAGIQUE : */
-    .bio-content, .bio-images { 
-        width: 100% !important; /* On force à prendre toute la place */
-        max-width: 100%; 
-    }
+/* =========================================
+   3. SECTION BIO (HISTOIRE & CERCLES)
+   ========================================= */
+.section-bio {
+    display: flex; justify-content: space-between; align-items: center;
+    min-height: 80vh; padding: 50px 0;
+}
+.bio-content { width: 50%; }
 
-    .bio-content { order: 1; } /* Texte en PREMIER */
-    .bio-images { 
-        order: 2; 
-        margin-top: 30px; 
-        margin-bottom: 0; 
-        /* On aligne le carrousel à gauche pour qu'il commence au bord */
-        justify-content: flex-start; 
-    }
+.title-decor {
+    font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 400;
+    margin-bottom: 30px; color: #8ab4f8; position: relative; display: inline-block;
+}
+.title-decor::after {
+    content: ''; display: block; width: 60px; height: 4px;
+    background: white; margin: 10px auto 0 auto; border-radius: 2px;
+}
 
-    .title-decor { font-size: 2.2rem; text-align: center; margin-bottom: 20px; }
-    
-    /* On enlève le justifié sur mobile pour éviter les gros trous entre les mots */
-    .bio-text p { 
-        font-size: 1rem; 
-        text-align: left; /* Plus propre sur mobile que justify */
-        line-height: 1.5;
-    }
+.bio-text p {
+    font-size: 0.95rem; line-height: 1.6; color: #ddd; margin-bottom: 15px;
+    opacity: 0; animation: bootText 0.8s ease-out forwards;
+}
 .bio-text p:nth-child(1) { animation-delay: 0.2s; }
 .bio-text p:nth-child(2) { animation-delay: 0.4s; }
 .bio-text p:nth-child(3) { animation-delay: 0.6s; }
@@ -803,18 +794,37 @@ footer#contact::before {
     /* On ajoute une marge en haut du site pour compenser le header fixe */
     main { margin-left: 0; padding: 0; width: 100%; padding-top: 90px; }
 
-    /* 3. BIO : ORDRE LOGIQUE (TEXTE -> BOUTON -> IMAGES) */
+/* 3. BIO : ORDRE LOGIQUE & PLEINE LARGEUR */
     .section-bio {
-        display: flex; flex-direction: column;
-        padding: 0 20px 40px; /* Ajustement padding */
+        display: flex; 
+        flex-direction: column;
+        padding: 0 20px 40px; /* Un peu de marge sur les côtés */
+        width: 100%; /* Sécurité */
     }
     
-    /* C'EST ICI LE CHANGEMENT D'ORDRE */
+    /* C'EST ICI LA CORRECTION MAGIQUE : */
+    .bio-content, .bio-images { 
+        width: 100% !important; /* On force à prendre toute la place */
+        max-width: 100%; 
+    }
+
     .bio-content { order: 1; } /* Texte en PREMIER */
-    .bio-images { order: 2; margin-top: 30px; margin-bottom: 0; } /* Images en DESSOUS */
+    .bio-images { 
+        order: 2; 
+        margin-top: 30px; 
+        margin-bottom: 0; 
+        /* On aligne le carrousel à gauche pour qu'il commence au bord */
+        justify-content: flex-start; 
+    }
 
     .title-decor { font-size: 2.2rem; text-align: center; margin-bottom: 20px; }
-    .bio-text p { font-size: 1rem; text-align: justify; }
+    
+    /* On enlève le justifié sur mobile pour éviter les gros trous entre les mots */
+    .bio-text p { 
+        font-size: 1rem; 
+        text-align: left; /* Plus propre sur mobile que justify */
+        line-height: 1.5;
+    }
 
     /* Gestion du "Read More" */
     .bio-text p:nth-child(n+2) { display: none; }
