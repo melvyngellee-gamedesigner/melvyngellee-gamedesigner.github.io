@@ -93,13 +93,8 @@ main {
 }
 
 .top-nav {
-    display: flex; justify-content: flex-end; gap: 30px; padding: 40px 0;
+    display: none !important; /* On cache l'ancienne nav pour utiliser le HUD */
 }
-.top-nav a {
-    color: white; text-decoration: none; font-weight: bold;
-    font-size: 0.9rem; letter-spacing: 1px; transition: color 0.3s;
-}
-.top-nav a:hover { color: var(--accent-blue); }
 
 /* Badge École */
 .school-badge {
@@ -654,25 +649,10 @@ footer#contact::before {
 @keyframes btn-anim3 { 0% { right: -100%; } 50%, 100% { right: 100%; } }
 @keyframes btn-anim4 { 0% { bottom: -100%; } 50%, 100% { bottom: 100%; } }
 
-/* Mobile Adaptations */
-@media (max-width: 768px) {
-    .sidebar { display: none; } /* On cache la sidebar sur mobile si elle gêne */
-    main { margin-left: 0; padding: 20px; }
-    .top-nav { justify-content: center; }
-    .section-bio { flex-direction: column; }
-    .bio-content, .bio-images { width: 100%; }
-    .bio-images { margin-top: 40px; }
-    .hud-cv-btn { padding: 15px 30px; font-size: 1rem; bottom: 20px; right: 20px; gap: 10px; }
-    .hud-cv-btn i { font-size: 1.2rem; }
-    .school-badge { display: none; }
-    .contact-hub { grid-template-columns: 1fr; }
-    .projects-grid { grid-template-columns: 1fr; }
-}
 /* =========================================
    NAVIGATION HUD (REMPLACEMENT TOP NAV)
    ========================================= */
 
-/* */
 .top-nav { display: none !important; } 
 
 .hud-nav {
@@ -684,7 +664,6 @@ footer#contact::before {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* Petit fond verre fumé vertical */
     background: rgba(20, 20, 30, 0.6);
     backdrop-filter: blur(10px);
     padding: 20px 10px;
@@ -740,7 +719,6 @@ footer#contact::before {
     transition: all 0.3s ease;
 }
 
-/* Afficher le tooltip au survol */
 .hud-link:hover::before,
 .hud-link:hover::after {
     opacity: 1;
@@ -755,46 +733,18 @@ footer#contact::before {
     transform: scale(1.1);
 }
 
-/* Couleurs spécifiques par section si on veut du détail */
 .hud-link[href="#projets"].active { background: #ff9d00; box-shadow: 0 0 15px #ff9d00; }
 .hud-link[href="#contact"].active { background: #00f2ff; box-shadow: 0 0 15px #00f2ff; color: #000; }
 
 
-/* --- MOBILE : BARRE EN BAS (App Style) --- */
-@media (max-width: 768px) {
-    .hud-nav {
-        top: auto;
-        bottom: 20px;
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%); /* Centré horizontalement */
-        flex-direction: row; /* Horizontal */
-        padding: 10px 20px;
-        width: 90%;
-        justify-content: space-between;
-        border-radius: 20px;
-        background: rgba(10, 10, 15, 0.95); /* Plus opaque sur mobile */
-    }
-
-    .hud-link {
-        width: 40px; height: 40px; font-size: 1rem;
-        background: transparent; /* Pas de rond sur mobile pour gagner de la place */
-    }
-    
-    /* On cache les tooltips sur mobile (pas de souris) */
-    .hud-link::before, .hud-link::after { display: none; }
-    
-    /* L'actif devient juste une couleur */
-    .hud-link.active {
-        background: transparent;
-        color: var(--accent-blue);
-        box-shadow: none;
-        transform: scale(1.2);
-    }
-    
-    /* On cache le gros bouton CV flottant sur mobile car il gêne la nav */
-    .hud-cv-btn { display: none; }
+/* =========================================
+   CORRECTIF BOUTON "READ MORE" (PC)
+   ========================================= */
+/* On cache le bouton par défaut sur PC */
+.btn-read-more {
+    display: none; 
 }
+
 /* =========================================
    MOBILE OVERHAUL (VERSION FINALE & ANIMÉE)
    ========================================= */
@@ -855,7 +805,8 @@ footer#contact::before {
     .bio-text p:first-child { margin-bottom: 5px; font-size: 1rem; color: #fff; }
     
     .btn-read-more {
-        display: block; margin: 15px auto 0;
+        display: block !important; /* Force l'affichage sur mobile */
+        margin: 15px auto 0;
         background: transparent; border: 1px solid var(--accent-blue);
         color: var(--accent-blue); padding: 10px 25px; border-radius: 50px;
         font-family: var(--font-head); font-size: 0.9rem; cursor: pointer;
