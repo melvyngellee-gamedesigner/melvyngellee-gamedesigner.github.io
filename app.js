@@ -541,3 +541,35 @@ if (carousel) {
         setTimeout(() => { isPaused = false; }, 2000); 
     });
 }
+/* =========================================
+   16. CV SELECTION MODAL
+   ========================================= */
+// Sélectionne tous les boutons qui mènent au CV (PC et potentielles icônes mobiles)
+// NOTE : Assure-toi que tes boutons CV dans le HTML ont la classe "js-trigger-cv"
+const cvTriggers = document.querySelectorAll('.hud-cv-btn, .cv-trigger-link'); 
+const cvModal = document.getElementById('cv-choice-modal');
+const closeCvBtn = document.querySelector('.close-cv-modal');
+
+if (cvModal) {
+    // Ouvrir la modal au clic
+    cvTriggers.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault(); // Empêche le téléchargement direct
+            cvModal.classList.add('active');
+        });
+    });
+
+    // Fermer avec la croix
+    if (closeCvBtn) {
+        closeCvBtn.addEventListener('click', () => {
+            cvModal.classList.remove('active');
+        });
+    }
+
+    // Fermer en cliquant en dehors
+    cvModal.addEventListener('click', (e) => {
+        if (e.target === cvModal) {
+            cvModal.classList.remove('active');
+        }
+    });
+}
