@@ -454,7 +454,7 @@
         </div>
     </div>
 
-    <div id="modal-glados" class="project-modal">
+<div id="modal-glados" class="project-modal">
         <div class="modal-container">
             <span class="close-details">&times;</span>
             
@@ -467,7 +467,7 @@
                 
                 <div class="modal-intro-header">
                     <p class="story-text" style="text-align: center; font-size: 1.2rem; color: #fff;">
-                        <em>"Comment synchroniser 10 cerveaux sur une mécanique invisible ?"</em>
+                        <em>"How to align 10 brains on an invisible mechanic?"</em>
                     </p>
                     <div class="modal-tags-bar">
                         <span><i class="fa-solid fa-users"></i> Team of 10</span>
@@ -476,56 +476,89 @@
                     </div>
                 </div>
 
-                <div class="modal-gallery-grid" style="margin-bottom: 40px;">
+                <div class="modal-split-layout">
+                    
+                    <div class="story-column">
+                        
+                        <h3 class="story-chapter-title" style="margin-top: 0;">00. Context & Origins</h3>
+                        <div class="story-text">
+                            <p>Chromesthesia represents a significant milestone in my academic journey as an <strong>end-of-year project</strong> that brought together <strong>three distinct curriculums</strong> for the first time.</p>
+                        </div>
+
+                        <h3 class="story-chapter-title">01. The Challenge: A Silent Mechanic</h3>
+                        <div class="story-text">
+                            <p>The game is a puzzle-platformer regarding <strong>perception</strong>. The player manipulates sound frequencies to make platforms appear. The core challenge was communication: how do we make sound (invisible) a tangible gameplay element for the player?</p>
+                            <p>Working with 6 Game Designers and 2 Sound Designers, my role shifted from pure design to <strong>technical mediation</strong>. We had ideas, but implementing them required a rigorous bridge between creative intent and the engine.</p>
+                        </div>
+
+                        <a href="assets/docs/chromesthesia/pitch_deck.pdf" target="_blank" class="doc-card-inline">
+                            <div class="doc-info">
+                                <h4>THE INITIAL VISION (PITCH DECK)</h4>
+                                <p>Discover how we sold the concept of "Sound as Matter".</p>
+                            </div>
+                            <div class="doc-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                        </a>
+
+                        <h3 class="story-chapter-title">02. Rational Level Design</h3>
+                        <div class="story-text">
+                            <p>One of the hurdles was visualizing the flow. Alongside my peers, I helped define the "LD Bricks" distribution. To support this, we used data to verify our intuition, mapping out gameplay ingredients across the game's progression.</p>
+                        </div>
+
+                        <div class="comparison-slider">
+                            <div class="c-image-wrapper">
+                                <img src="assets/docs/chromesthesia/screen_3.jpg" alt="Unity Version">
+                                <span class="c-label after">UNITY</span>
+                            </div>
+                            <div class="c-image-wrapper overlay-image">
+                                <img src="assets/docs/chromesthesia/ld_process_miro.png" alt="Miro Plan">
+                                <span class="c-label before">MIRO</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="50" class="c-slider" id="sliderInput">
+                            <div class="c-slider-line"><div class="c-slider-button"><i class="fa-solid fa-left-right"></i></div></div>
+                        </div>
+
+                        <a href="assets/docs/chromesthesia/ld_elements.xlsx" download class="doc-card-inline">
+                            <div class="doc-info">
+                                <h4>GAMEPLAY BRICKS DISTRIBUTION (EXCEL)</h4>
+                                <p>Download the matrix used to pace the gameplay ingredients.</p>
+                            </div>
+                            <div class="doc-icon"><i class="fa-solid fa-file-excel"></i></div>
+                        </a>
+
+                        <h3 class="story-chapter-title">03. What I learned</h3>
+                        <div class="story-text">
+                            <p>This project taught me that <strong>documentation is a design tool</strong>. By keeping our data structured, we allowed Sound Designers and Level Designers to speak the same language.</p>
+                        </div>
+
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 8px; margin-top: 40px; border: 1px dashed #555;">
+                            <h4 style="margin-top: 0; color: var(--accent-blue); font-family: var(--font-head); font-size: 1rem;">📁 PROJECT ARCHIVES & DOCS</h4>
+                            <div style="display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 15px;">
+                                <a href="assets/docs/chromesthesia/concept_doc.pdf" target="_blank" class="dl-btn"><i class="fa-solid fa-file-pdf"></i> Concept Doc</a>
+                                <a href="assets/docs/chromesthesia/ld_elements.xlsx" download class="dl-btn"><i class="fa-solid fa-table"></i> Gameplay Bricks (Excel)</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="visual-column">
+                        <div class="sticky-video-container">
+                            <video controls autoplay muted loop playsinline poster="assets/Glados_Chromestesia_Logo.png">
+                                <source src="assets/docs/chromesthesia/chrome_walkthrough.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p class="sticky-video-label">Gameplay Walkthrough</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h3 class="story-chapter-title" style="text-align: center; margin-top: 60px;">04. FINAL RESULT</h3>
+                <div class="modal-gallery-grid">
                     <img src="assets/docs/chromesthesia/screen_1.jpg" alt="Gameplay Action">
+                    <img src="assets/docs/chromesthesia/screen_2.jpg" alt="Gameplay Action">
                     <img src="assets/docs/chromesthesia/screen_3.jpg" alt="Gameplay Puzzle">
-                </div>
-                
-                <h3 class="story-chapter-title">01. The Challenge: A Silent Mechanic</h3>
-                <div class="story-text">
-                    <p>Chromesthesia isn't just a platformer; it's a puzzle regarding <strong>perception</strong>. The player creates platforms using sound frequencies. The core challenge was communication: how do we make sound (invisible) a tangible gameplay element for the player?</p>
-                    <p>Working with 6 Game Designers and 2 Sound Designers, my role shifted from pure design to <strong>technical mediation</strong>. We had great ideas, but implementing them required a rigorous bridge between the creative intent and the engine.</p>
-                </div>
-
-                <a href="assets/docs/chromesthesia/pitch_deck.pdf" target="_blank" class="doc-card-inline">
-                    <div class="doc-info">
-                        <h4>THE INITIAL VISION (PITCH DECK)</h4>
-                        <p>Discover how we sold the concept of "Sound as Matter".</p>
-                    </div>
-                    <div class="doc-icon"><i class="fa-solid fa-file-pdf"></i></div>
-                </a>
-
-                <h3 class="story-chapter-title">02. Bridging the Gap: Rational Level Design</h3>
-                <div class="story-text">
-                    <p>One of the hardest hurdles was visualizing the flow. On paper (Miro), the levels looked great. In Unity, the pacing felt off. I took charge of the <strong>Rational Level Design</strong>.</p>
-                    <p>I realized that relying solely on intuition wasn't enough for a team of 10. We needed math to verify our feelings. I created balancing matrices to calculate the "Action/Rest" ratio of our levels before even placing a single block in Unity.</p>
-                </div>
-
-                <p style="font-style: italic; color: #888; margin-bottom: 10px;">Move the slider to see the translation from Plan (Miro) to Reality (Unity):</p>
-                <div class="comparison-slider">
-                    <div class="c-image-wrapper">
-                        <img src="assets/docs/chromesthesia/screen_3.jpg" alt="Unity Version">
-                        <span class="c-label after">UNITY (FINAL)</span>
-                    </div>
-                    <div class="c-image-wrapper overlay-image">
-                        <img src="assets/docs/chromesthesia/ld_process_miro.png" alt="Miro Plan">
-                        <span class="c-label before">MIRO (PLAN)</span>
-                    </div>
-                    <input type="range" min="0" max="100" value="50" class="c-slider" id="sliderInput">
-                    <div class="c-slider-line"><div class="c-slider-button"><i class="fa-solid fa-left-right"></i></div></div>
-                </div>
-
-                <a href="assets/docs/chromesthesia/ld_elements.xlsx" download class="doc-card-inline">
-                    <div class="doc-info">
-                        <h4>THE MATH BEHIND THE MAGIC (EXCEL)</h4>
-                        <p>Download the balancing matrix used to pace the levels.</p>
-                    </div>
-                    <div class="doc-icon"><i class="fa-solid fa-file-excel"></i></div>
-                </a>
-
-                <h3 class="story-chapter-title">03. What I learned</h3>
-                <div class="story-text">
-                    <p>This project taught me that <strong>documentation is a design tool</strong>, not just paperwork. By structuring our data clearly on Excel and Miro, I helped the Sound Designers and Level Designers speak the same language, avoiding weeks of rework.</p>
+                    <img src="assets/docs/chromesthesia/screen_4.jpg" alt="Level Art">
+                    <img src="assets/docs/chromesthesia/screen_7.png" alt="Atmosphere">
                 </div>
 
             </div>
@@ -554,53 +587,88 @@
                     </div>
                 </div>
 
-                <div class="modal-gallery-grid" style="margin-bottom: 40px;">
+                <div class="modal-split-layout">
+                    
+                    <div class="story-column">
+                        
+                        <h3 class="story-chapter-title" style="margin-top: 0;">01. The Goal: "Juice" above all</h3>
+                        <div class="story-text">
+                            <p>Bloodlust had one simple premise: pure, unadulterated violence. But "violence" in games is about <strong>timing</strong> and <strong>feedback</strong>.</p>
+                            <p>As the Lead Sound Designer and Combat Designer, my obsession was the "Game Feel". I didn't want the player to just <em>see</em> the attack; I wanted them to <em>feel</em> the impact.</p>
+                        </div>
+
+                        <a href="assets/docs/bloodlust/gamefeel_doc.pdf" target="_blank" class="doc-card-inline">
+                            <div class="doc-info">
+                                <h4>DEFINING "THE CRUNCH" (DOC)</h4>
+                                <p>My analysis on Hitstop, Screen Shake, and Audio Feedback.</p>
+                            </div>
+                            <div class="doc-icon"><i class="fa-solid fa-hand-fist"></i></div>
+                        </a>
+
+                        <h3 class="story-chapter-title">02. Audio Design & Integration</h3>
+                        <div class="story-text">
+                            <p>In a beat 'em up, hearing the exact same punch sound a thousand times causes listener fatigue. My role was to curate specific sounds that matched the gameplay utility (hit validation, finishers) and ensure their coherence with the visual impact.</p>
+                            <p><strong>Implementation:</strong> Using <strong>Visual Scripting</strong>, I integrated these assets directly into the engine. I created logic graphs to randomize pitch and volume on every hit, ensuring variety and organic feedback without needing hundreds of different sound files.</p>
+                        </div>
+
+                        <div class="code-viewer-container">
+                            <div class="code-header">
+                                <span class="file-name">Audio_Impact_Logic.graph</span>
+                                <span class="lang-badge" style="background: #9b59b6; color: white;">Visual Scripting</span>
+                            </div>
+                            <div class="code-content-wrapper" style="padding: 15px; color: #aaa; font-family: monospace; font-size: 0.85rem;">
+                                [Event: OnEnemyHit] <br>
+                                &nbsp;&nbsp;└──> [Random Range (0.9, 1.1)] ──> [Set Pitch]<br>
+                                &nbsp;&nbsp;└──> [Random Range (0.8, 1.0)] ──> [Set Volume]<br>
+                                &nbsp;&nbsp;└──> [Play OneShot: Impact_Heavy]
+                            </div>
+                        </div>
+
+                        <h3 class="story-chapter-title">03. Organizing Chaos</h3>
+                        <div class="story-text">
+                            <p>I also managed the System Design for enemy waves. Using Excel, I balanced HP, damage, and spawn rates to create a flow state.</p>
+                        </div>
+
+                        <a href="assets/docs/bloodlust/ennemies.xlsx" download class="doc-card-inline">
+                            <div class="doc-info">
+                                <h4>THE BALANCING ACT (EXCEL)</h4>
+                                <p>Full breakdown of enemy AI behaviors and stats.</p>
+                            </div>
+                            <div class="doc-icon"><i class="fa-solid fa-skull"></i></div>
+                        </a>
+
+                        <div style="background: rgba(100, 0, 0, 0.1); padding: 20px; border-radius: 8px; margin-top: 40px; border: 1px dashed #8a0000;">
+                            <h4 style="margin-top: 0; color: #cf0000; font-family: var(--font-head); font-size: 1rem;">📁 FULL PROJECT ARCHIVES</h4>
+                            <div style="display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 15px;">
+                                <a href="assets/docs/bloodlust/gdd.pdf" target="_blank" class="dl-btn"><i class="fa-solid fa-book"></i> GDD</a>
+                                <a href="assets/docs/bloodlust/game_concept_v1.pdf" target="_blank" class="dl-btn"><i class="fa-solid fa-lightbulb"></i> Concept V1</a>
+                                <a href="assets/docs/bloodlust/sound_and_proglists.xlsx" download class="dl-btn"><i class="fa-solid fa-file-audio"></i> Sound Lists</a>
+                                <a href="assets/docs/bloodlust/ennemies.xlsx" download class="dl-btn"><i class="fa-solid fa-skull"></i> Enemy Stats</a>
+                                <a href="https://trello.com/invite/b/68e3b88d804d1af459099ed2/ATTIea3887cd99880cda89eef53f3ffd83403107C3F5/brawler-3d-brotherhood" target="_blank" class="dl-btn"><i class="fa-brands fa-trello"></i> Trello</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="visual-column">
+                        <div class="sticky-video-container">
+                            <video controls autoplay muted loop playsinline poster="assets/bloodlust.png">
+                                <source src="assets/docs/bloodlust/bloodlust_walkthrough.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p class="sticky-video-label">Gameplay Walkthrough</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h3 class="story-chapter-title" style="text-align: center; margin-top: 60px;">04. FINAL RESULT</h3>
+                <div class="modal-gallery-grid">
                     <img src="assets/docs/bloodlust/screenshot03.png" alt="Gore Action">
                     <img src="assets/docs/bloodlust/screenshot05.png" alt="Crowd Control">
+                    <img src="assets/docs/bloodlust/screenshot01.png" alt="Gameplay 1">
+                    <img src="assets/docs/bloodlust/screenshot09.png" alt="Gameplay 9">
                 </div>
-
-                <h3 class="story-chapter-title">01. The Goal: "Juice" above all</h3>
-                <div class="story-text">
-                    <p>Bloodlust had one simple premise: pure, unadulterated violence. But "violence" in games isn't just about red pixels; it's about <strong>timing</strong> and <strong>feedback</strong>. </p>
-                    <p>As the Lead Sound Designer and Combat Designer, my obsession was the "Game Feel". I didn't want the player to just <em>see</em> the attack; I wanted them to <em>feel</em> the impact.</p>
-                </div>
-
-                <a href="assets/docs/bloodlust/gamefeel_doc.pdf" target="_blank" class="doc-card-inline">
-                    <div class="doc-info">
-                        <h4>DEFINING "THE CRUNCH" (DOC)</h4>
-                        <p>My analysis on Hitstop, Screen Shake, and Audio Feedback.</p>
-                    </div>
-                    <div class="doc-icon"><i class="fa-solid fa-hand-fist"></i></div>
-                </a>
-
-                <h3 class="story-chapter-title">02. The Technical Wall: Adaptive Audio</h3>
-                <div class="story-text">
-                    <p>The main issue we faced was repetition. In a Brawler, you hit things thousands of times. Standard sound effects became annoying very quickly.</p>
-                    <p><strong>My solution:</strong> I leveraged my C# knowledge to build an adaptive audio system. Instead of playing one sound, I coded a randomizer for pitch and volume variations on every hit. I also implemented a "Dynamic Intensity" system where the music layers build up based on the combo counter.</p>
-                    <p>This technical implementation of a creative need is what I'm most proud of on this project.</p>
-                </div>
-
-                <div class="code-viewer-container">
-                    <div class="code-header"><span class="file-name">AdaptiveAudio.cs (Snippet)</span></div>
-                    <div class="code-content-wrapper" style="padding: 15px; color: #aaa; font-family: monospace; font-size: 0.85rem;">
-                        // Pseudocode logic used:<br>
-                        audioSource.pitch = Random.Range(0.9f, 1.1f);<br>
-                        if(combo > 10) musicLayer2.Volume = Mathf.Lerp(0, 1, Time.deltaTime);
-                    </div>
-                </div>
-
-                <h3 class="story-chapter-title">03. Organizing the Chaos (System Design)</h3>
-                <div class="story-text">
-                    <p>Beyond the feel, a Brawler needs structure. I managed the System Design for the enemy waves. Using Excel, I balanced the HP, damage, and spawn rates to create a flow state—challenging but never unfair.</p>
-                </div>
-
-                <a href="assets/docs/bloodlust/ennemies.xlsx" download class="doc-card-inline">
-                    <div class="doc-info">
-                        <h4>THE BALANCING ACT (EXCEL)</h4>
-                        <p>Full breakdown of enemy AI behaviors and stats.</p>
-                    </div>
-                    <div class="doc-icon"><i class="fa-solid fa-skull"></i></div>
-                </a>
 
             </div>
         </div>
@@ -628,43 +696,42 @@
                     </div>
                 </div>
 
-                <div class="modal-gallery-grid" style="margin-bottom: 40px;">
-                    <img src="assets/docs/ungor/screen_1.jpg" alt="Grappling Hook Mechanics">
-                </div>
+                <div class="modal-split-layout">
+                    
+                    <div class="story-column">
+                        
+                        <h3 class="story-chapter-title" style="margin-top: 0;">01. The Constraint as a Muse</h3>
+                        <div class="story-text">
+                            <p>Ungor Bok was born from a strict constraint: <strong>One Button Only</strong>. No directional keys, no jump button. Just SPACE.</p>
+                            <p>This forced me to strip Game Design down to its absolute core: Timing. I chose a grappling hook mechanic because it offers momentum and physics-based gameplay that feels rewarding to master.</p>
+                        </div>
 
-                <h3 class="story-chapter-title">01. The Constraint as a Muse</h3>
-                <div class="story-text">
-                    <p>Ungor Bok was born from a strict constraint: <strong>One Button Only</strong>. No directional keys, no jump button. Just SPACE.</p>
-                    <p>This forced me to strip Game Design down to its absolute core: Timing. I chose a grappling hook mechanic because it offers momentum and physics-based gameplay that feels rewarding to master, even with limited inputs.</p>
-                </div>
+                        <a href="assets/docs/ungor/one_page_document_concept.pdf" target="_blank" class="doc-card-inline">
+                            <div class="doc-info">
+                                <h4>THE CONCEPT (ONE PAGE)</h4>
+                                <p>Synthesizing a complex physics idea into a simple document.</p>
+                            </div>
+                            <div class="doc-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                        </a>
 
-                <a href="assets/docs/ungor/one_page_document_concept.pdf" target="_blank" class="doc-card-inline">
-                    <div class="doc-info">
-                        <h4>THE CONCEPT (ONE PAGE)</h4>
-                        <p>Synthesizing a complex physics idea into a simple document.</p>
-                    </div>
-                    <div class="doc-icon"><i class="fa-solid fa-file-invoice"></i></div>
-                </a>
+                        <h3 class="story-chapter-title">02. The UX Problem</h3>
+                        <div class="story-text">
+                            <p><strong>The Struggle:</strong> Without directional keys, players felt helpless aiming the hook.</p>
+                            <p><strong>The Solution:</strong> I coded a rotating arrow around the character (diegetic crosshair). The player doesn't control the direction directly, but they control <em>when</em> to shoot based on the arrow's rotation. It turned frustration into a rhythm game.</p>
+                        </div>
 
-                <h3 class="story-chapter-title">02. The UX Problem</h3>
-                <div class="story-text">
-                    <p><strong>The Struggle:</strong> During the first playtests, players were frustrated. Without directional keys, they couldn't aim the hook. They felt helpless.</p>
-                    <p><strong>The Solution:</strong> I couldn't add buttons, so I added visual information. I coded a rotating arrow around the character. It acts as a diegetic crosshair. The player doesn't control the direction directly, but they control <em>when</em> to shoot based on the arrow's rotation. It turned frustration into a rhythm game.</p>
-                </div>
+                        <h3 class="story-chapter-title">03. Full Autonomy</h3>
+                        <div class="story-text">
+                            <p>Being a solo developer meant I had to engineer my own ideas. I wrote the state machine for the character physics and the raycast logic for the hook.</p>
+                        </div>
 
-                <h3 class="story-chapter-title">03. Full Autonomy (Coding)</h3>
-                <div class="story-text">
-                    <p>Being a solo developer on this meant I had to be the engineer of my own ideas. I wrote the state machine for the character physics and the raycast logic for the hook.</p>
-                    <p>This project honed my ability to <strong>prototype fast</strong>. If I have an idea, I don't just write it down; I open Unity and build it to see if it's fun.</p>
-                </div>
-
-                <div class="code-viewer-container">
-                    <div class="code-header">
-                        <span class="file-name"><i class="fa-brands fa-unity"></i> Tutorial_GrapplingGun.cs</span>
-                        <span class="lang-badge">C#</span>
-                    </div>
-                    <div class="code-content-wrapper" id="ungor-code-wrapper">
-                        <pre><code class="language-csharp">
+                        <div class="code-viewer-container">
+                            <div class="code-header">
+                                <span class="file-name"><i class="fa-brands fa-unity"></i> Tutorial_GrapplingGun.cs</span>
+                                <span class="lang-badge">C#</span>
+                            </div>
+                            <div class="code-content-wrapper" id="ungor-code-wrapper">
+                                <pre><code class="language-csharp">
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -674,7 +741,7 @@ public class Tutorial_GrapplingGun : MonoBehaviour
     [Header("Scripts Ref:")]
     public Tutorial_GrapplingRope grappleRope;
 
-    // ... (Your Code Here)
+    // ... (Code...)
     public void Grapple()
     {
         m_springJoint2D.autoConfigureDistance = false;
@@ -685,24 +752,42 @@ public class Tutorial_GrapplingGun : MonoBehaviour
         }
     }
 }
-                        </code></pre>
-                        <div class="code-overlay" id="code-overlay"></div>
+                                </code></pre>
+                                <div class="code-overlay" id="code-overlay"></div>
+                            </div>
+                            <button class="btn-see-all-code" id="btn-toggle-code">
+                                SEE ALL CODE <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div style="margin-top: 40px; text-align: center;">
+                            <a href="https://melvyng.itch.io/ungor-bok" target="_blank" class="btn-play" style="display: inline-block; padding: 15px 40px;">
+                                TRY THE GAME ON ITCH.IO <i class="fa-brands fa-itch-io"></i>
+                            </a>
+                        </div>
+
                     </div>
-                    <button class="btn-see-all-code" id="btn-toggle-code">
-                        SEE ALL CODE <i class="fa-solid fa-chevron-down"></i>
-                    </button>
+
+                    <div class="visual-column">
+                        <div class="sticky-video-container">
+                            <video controls autoplay muted loop playsinline poster="assets/ungor_bok.jpg">
+                                <source src="assets/docs/ungor/ungor_walkthrough.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p class="sticky-video-label">Gameplay Walkthrough</p>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div style="margin-top: 40px; text-align: center;">
-                    <a href="https://melvyng.itch.io/ungor-bok" target="_blank" class="btn-play" style="display: inline-block; padding: 15px 40px;">
-                        TRY THE GAME ON ITCH.IO <i class="fa-brands fa-itch-io"></i>
-                    </a>
+                <h3 class="story-chapter-title" style="text-align: center; margin-top: 60px;">04. FINAL RESULT</h3>
+                <div class="modal-gallery-grid">
+                    <img src="assets/docs/ungor/screen_1.jpg" alt="Grappling Hook Mechanics">
                 </div>
 
             </div>
         </div>
     </div>
-
     <div id="modal-mh" class="project-modal">
         <div class="modal-container">
             <span class="close-details">&times;</span>

@@ -530,13 +530,60 @@ footer#contact::before {
 }
 .close-details:hover { color: #ff3333; }
 
-/* MISE EN PAGE STORY (CENTERED) */
+/* MISE EN PAGE STORY (SPLIT SCREEN POUR PC) */
 .modal-scroll-content {
-    display: block; /* Plus de flex row */
+    display: block; /* S'assure que le contenu défile */
     overflow-y: auto;
-    padding: 40px 15%; /* On centre le texte */
-    max-width: 1000px;
-    margin: 0 auto;
+    padding: 40px 5%; /* Un peu de marge */
+    width: 100%;
+}
+
+/* =========================================
+   NOUVELLE STRUCTURE MODAL (SPLIT SCREEN - VIDEO LARGE)
+   ========================================= */
+
+/* Le conteneur principal */
+.modal-split-layout {
+    display: grid;
+    /* CHANGEMENT ICI : Le texte (0.8) est plus petit que la vidéo (1.2) */
+    grid-template-columns: 0.8fr 1.2fr; 
+    gap: 30px;
+    align-items: start;
+    padding-bottom: 40px;
+}
+
+/* La colonne de gauche (L'histoire qui défile) */
+.story-column {
+    /* Rien de spécial */
+}
+
+/* La colonne de droite (La vidéo qui reste collée) */
+.visual-column {
+    position: sticky;
+    top: 0; 
+    height: fit-content;
+    z-index: 10;
+}
+
+/* Style de la vidéo */
+.sticky-video-container {
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6); /* Ombre plus prononcée */
+    background: #000;
+}
+.sticky-video-container video {
+    width: 100%;
+    display: block;
+    /* On s'assure que la vidéo ne dépasse pas la hauteur de l'écran */
+    max-height: 80vh; 
+    object-fit: cover;
+}
+.sticky-video-label {
+    text-align: center; font-size: 0.75rem; color: #888;
+    padding: 8px; background: #0a0a10; margin: 0;
+    text-transform: uppercase; letter-spacing: 1px;
 }
 
 .modal-intro-header {
@@ -563,24 +610,28 @@ footer#contact::before {
     text-align: justify;
 }
 
-/* DOCUMENTS INTÉGRÉS (INLINE CARDS) */
-.doc-card-inline {
-    background: rgba(30, 30, 40, 0.6);
-    border: 1px solid rgba(74, 144, 226, 0.3);
-    border-left: 4px solid var(--accent-blue);
-    padding: 20px; margin: 30px 0;
-    border-radius: 0 8px 8px 0;
-    display: flex; align-items: center; justify-content: space-between;
-    transition: 0.3s;
+/* DOCUMENTS INTÉGRÉS (INLINE CARDS) & ARCHIVES */
+.doc-card-inline, .dl-btn {
+    display: flex; align-items: center; justify-content: center; gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px; margin: 10px 0;
+    border-radius: 4px;
     text-decoration: none;
+    transition: 0.3s;
+    color: #ffffff !important; /* Force le texte en blanc pour lisibilité */
 }
-.doc-card-inline:hover {
+
+.doc-card-inline:hover, .dl-btn:hover {
     background: rgba(74, 144, 226, 0.1);
+    border-color: var(--accent-blue);
     transform: translateX(5px);
+    color: var(--accent-blue) !important;
 }
+
 .doc-info h4 { margin: 0; color: #fff; font-family: var(--font-head); }
 .doc-info p { margin: 5px 0 0 0; font-size: 0.85rem; color: #aaa; }
-.doc-icon { font-size: 1.5rem; color: var(--accent-blue); }
+.doc-icon, .dl-btn i { font-size: 1.5rem; color: var(--accent-blue); }
 
 /* Elements Galerie & Figures */
 .modal-img { width: 100%; border-radius: 5px; margin: 20px 0; border: 1px solid #555; }
@@ -602,9 +653,9 @@ footer#contact::before {
 #modal-bloodlust .modal-header { border-bottom: 3px solid #cf0000; background: linear-gradient(135deg, #1a0000 0%, #000000 100%); }
 #modal-bloodlust .modal-subtitle { color: #cf0000; text-shadow: 0 0 10px rgba(207, 0, 0, 0.4); }
 #modal-bloodlust .story-chapter-title::before { background: #cf0000; }
-#modal-bloodlust .doc-card-inline { border-color: #cf0000; border-left-color: #cf0000; }
-#modal-bloodlust .doc-card-inline:hover { background: rgba(207, 0, 0, 0.1); }
-#modal-bloodlust .doc-icon { color: #cf0000; }
+#modal-bloodlust .doc-card-inline, #modal-bloodlust .dl-btn { border-color: rgba(207, 0, 0, 0.5); }
+#modal-bloodlust .doc-card-inline:hover, #modal-bloodlust .dl-btn:hover { background: rgba(207, 0, 0, 0.1); border-color: #cf0000; color: #cf0000 !important; }
+#modal-bloodlust .doc-icon, #modal-bloodlust .dl-btn i { color: #cf0000; }
 #modal-bloodlust .modal-tags-bar { color: #cf0000; }
 #modal-bloodlust figcaption { color: #cf0000; }
 #modal-bloodlust .modal-scroll-content::-webkit-scrollbar-thumb { background-color: #8a0000; }
@@ -613,8 +664,9 @@ footer#contact::before {
 #modal-glados .modal-header { background: linear-gradient(135deg, #1a0b2e 0%, #000000 100%); border-bottom: 2px solid #00f2ff; }
 #modal-glados .modal-subtitle { color: #ff00ff; text-shadow: 0 0 10px rgba(255, 0, 255, 0.5); }
 #modal-glados .story-chapter-title::before { background: #00f2ff; }
-#modal-glados .doc-card-inline { border-color: #00f2ff; border-left-color: #ff00ff; }
-#modal-glados .doc-icon { color: #00f2ff; }
+#modal-glados .doc-card-inline, #modal-glados .dl-btn { border-color: rgba(0, 242, 255, 0.5); }
+#modal-glados .doc-card-inline:hover, #modal-glados .dl-btn:hover { background: rgba(0, 242, 255, 0.1); border-color: #00f2ff; color: #00f2ff !important; }
+#modal-glados .doc-icon, #modal-glados .dl-btn i { color: #00f2ff; }
 #modal-glados .modal-tags-bar { color: #ff00ff; }
 #modal-glados .modal-figure figcaption { color: #ff00ff; }
 #modal-glados .modal-scroll-content::-webkit-scrollbar-thumb { background-color: #00f2ff; border-radius: 10px; }
@@ -623,9 +675,9 @@ footer#contact::before {
 #modal-ungor .modal-header { background: linear-gradient(135deg, #2b2b2b 0%, #1a1a1a 100%); border-bottom: 3px solid #ff9d00; }
 #modal-ungor .modal-subtitle { color: #ff9d00; text-shadow: 0 0 10px rgba(255, 157, 0, 0.3); }
 #modal-ungor .story-chapter-title::before { background: #ff9d00; }
-#modal-ungor .doc-card-inline { border-color: #ff9d00; border-left-color: #ff9d00; }
-#modal-ungor .doc-card-inline:hover { background: rgba(255, 157, 0, 0.1); }
-#modal-ungor .doc-icon { color: #ff9d00; }
+#modal-ungor .doc-card-inline, #modal-ungor .dl-btn { border-color: rgba(255, 157, 0, 0.5); }
+#modal-ungor .doc-card-inline:hover, #modal-ungor .dl-btn:hover { background: rgba(255, 157, 0, 0.1); border-color: #ff9d00; color: #ff9d00 !important; }
+#modal-ungor .doc-icon, #modal-ungor .dl-btn i { color: #ff9d00; }
 #modal-ungor .modal-tags-bar { color: #ff9d00; }
 #modal-ungor figcaption { color: #ff9d00; }
 #modal-ungor .modal-scroll-content::-webkit-scrollbar-thumb { background-color: #555; border: 1px solid #ff9d00; }
@@ -787,7 +839,7 @@ footer#contact::before {
 /* =========================================
    MOBILE OVERHAUL (VERSION FINALE & ANIMÉE)
    ========================================= */
-@media (max-width: 768px) {
+@media (max-width: 900px) { /* Changement à 900px pour englober tablettes */
 
     /* 1. PERFORMANCE & BASE */
     #particle-canvas { display: none !important; }
@@ -954,13 +1006,31 @@ footer#contact::before {
     
     /* MODALS & TIMELINE */
     .modal-container { width: 100%; height: 100%; border-radius: 0; border: none; }
-    .modal-scroll-content { padding: 20px; }
     .doc-card-inline { flex-direction: column; text-align: center; gap: 15px; }
     .story-text { text-align: left; }
     .timeline { padding-left: 30px; margin: 0; }
     .timeline-icon { width: 30px; height: 30px; left: -46px; font-size: 0.9rem; }
     .timeline-progress-bar { left: 49px; }
     .contact-hub { grid-template-columns: 1fr; gap: 15px; }
+
+    /* MISE A JOUR SPLIT SCREEN MOBILE */
+    .modal-split-layout {
+        display: flex;
+        flex-direction: column-reverse; /* Texte en premier, vidéo au-dessus */
+        gap: 20px;
+    }
+    .visual-column {
+        position: relative; /* Pas de sticky sur mobile */
+        top: auto;
+        order: 2; /* Vidéo en haut */
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .story-column {
+        order: 1;
+        width: 100%;
+    }
+    .modal-scroll-content { padding: 20px; }
 }
 
 /* =========================================
@@ -1039,3 +1109,112 @@ footer#contact::before {
     transition: 0.3s;
 }
 .close-cv-modal:hover { color: white; }
+/* =========================================
+   10. THEMES SPÉCIFIQUES & ANIMATIONS BOUTONS
+   ========================================= */
+
+/* --- A. BLOODLUST (Thème Rouge Sang) --- */
+#modal-bloodlust .modal-header {
+    border-bottom: 3px solid #cf0000;
+    background: linear-gradient(135deg, #1a0000 0%, #000000 100%);
+}
+#modal-bloodlust .modal-subtitle { color: #cf0000; text-shadow: 0 0 10px rgba(207, 0, 0, 0.4); }
+#modal-bloodlust .story-chapter-title::before { background: #cf0000; }
+
+/* Boutons & Cartes Bloodlust */
+#modal-bloodlust .dl-btn, 
+#modal-bloodlust .doc-card-inline {
+    border-color: rgba(207, 0, 0, 0.4);
+    border-left-color: #cf0000; /* Bordure gauche plus forte */
+    animation: heartbeat 2s infinite ease-in-out; /* Animation active par défaut */
+}
+
+#modal-bloodlust .dl-btn:hover, 
+#modal-bloodlust .doc-card-inline:hover {
+    background: rgba(207, 0, 0, 0.15);
+    border-color: #cf0000;
+    box-shadow: 0 0 20px rgba(207, 0, 0, 0.6);
+    color: #cf0000 !important; /* Texte devient rouge */
+    transform: scale(1.02); /* Petit zoom agressif */
+    animation: none; /* On fige l'animation au survol pour le focus */
+}
+
+#modal-bloodlust .doc-icon, #modal-bloodlust .dl-btn i { color: #cf0000; }
+
+@keyframes heartbeat {
+    0% { box-shadow: 0 0 0 rgba(207,0,0,0); }
+    50% { box-shadow: 0 0 10px rgba(207,0,0,0.3); border-color: rgba(207, 0, 0, 0.8); }
+    100% { box-shadow: 0 0 0 rgba(207,0,0,0); }
+}
+
+
+/* --- B. CHROMESTESIA (Thème Néon Cyber) --- */
+#modal-glados .modal-header {
+    background: linear-gradient(135deg, #1a0b2e 0%, #000000 100%);
+    border-bottom: 2px solid #00f2ff;
+}
+#modal-glados .modal-subtitle { color: #ff00ff; text-shadow: 0 0 10px rgba(255, 0, 255, 0.5); }
+#modal-glados .story-chapter-title::before { background: #00f2ff; }
+
+/* Boutons & Cartes Chromesthesia */
+#modal-glados .dl-btn, 
+#modal-glados .doc-card-inline {
+    border-color: rgba(0, 242, 255, 0.4);
+    border-left-color: #ff00ff;
+    animation: speakerPulse 2s infinite ease-out;
+}
+
+#modal-glados .dl-btn:hover, 
+#modal-glados .doc-card-inline:hover {
+    background: rgba(0, 242, 255, 0.1);
+    border-color: #00f2ff;
+    box-shadow: 0 0 15px #00f2ff, 0 0 30px #ff00ff; /* Double glow */
+    color: #00f2ff !important;
+    transform: translateY(-3px);
+    animation: none;
+}
+
+#modal-glados .doc-icon, #modal-glados .dl-btn i { color: #00f2ff; }
+
+@keyframes speakerPulse {
+    0% { transform: scale(1); border-color: rgba(0, 242, 255, 0.4); }
+    15% { transform: scale(1.01); border-color: #ff00ff; box-shadow: 0 0 10px rgba(0,242,255,0.3); }
+    100% { transform: scale(1); border-color: rgba(0, 242, 255, 0.4); }
+}
+
+
+/* --- C. UNGOR BOK (Thème Torche/Caverne) --- */
+#modal-ungor .modal-header {
+    background: linear-gradient(135deg, #2b2b2b 0%, #1a1a1a 100%);
+    border-bottom: 3px solid #ff9d00;
+}
+#modal-ungor .modal-subtitle { color: #ff9d00; text-shadow: 0 0 10px rgba(255, 157, 0, 0.3); }
+#modal-ungor .story-chapter-title::before { background: #ff9d00; }
+
+/* Boutons & Cartes Ungor */
+#modal-ungor .dl-btn, 
+#modal-ungor .doc-card-inline {
+    border-color: rgba(255, 157, 0, 0.3);
+    border-left-color: #ff9d00;
+    animation: torchFlicker 3s infinite ease-in-out;
+}
+
+#modal-ungor .dl-btn:hover, 
+#modal-ungor .doc-card-inline:hover {
+    background: rgba(255, 157, 0, 0.15);
+    border-color: #ff9d00;
+    box-shadow: 0 0 20px rgba(255, 157, 0, 0.6);
+    color: #ff9d00 !important;
+    transform: translateY(-2px);
+    animation: none;
+}
+
+#modal-ungor .doc-icon, #modal-ungor .dl-btn i { color: #ff9d00; }
+
+@keyframes torchFlicker {
+    0% { box-shadow: 0 0 4px rgba(184, 115, 51, 0.1); border-color: rgba(255, 157, 0, 0.3); }
+    25% { box-shadow: 0 0 10px rgba(255, 157, 0, 0.3); border-color: #ff9d00; }
+    50% { box-shadow: 0 0 5px rgba(184, 115, 51, 0.1); border-color: rgba(255, 157, 0, 0.5); }
+    75% { box-shadow: 0 0 8px rgba(255, 204, 0, 0.2); border-color: #ffcc00; }
+    100% { box-shadow: 0 0 4px rgba(184, 115, 51, 0.1); border-color: rgba(255, 157, 0, 0.3); }
+}
