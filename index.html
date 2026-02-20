@@ -72,15 +72,10 @@
                 <h2 class="title-decor">My Story</h2>
                 <div class="bio-text">
                     <p>My journey in the gaming world didn't begin in front of a screen, but <strong class="shootable" data-target="c6">around a table</strong>. Playing board games taught me to <strong>dissect</strong> mechanics before I ever touched a game engine: <strong>understanding</strong> the balance of rules, the importance of player chemistry, and the satisfaction of a well-oiled system. This <strong>curiosity</strong> naturally extended to video games as I grew up, where I learned to <strong>observe</strong> level architecture, environmental storytelling, and, of course, the mechanics themselves.</p>
-
                     <p>My approach to Game Design is the result of a balance between <strong>precision</strong> and <strong>emotion</strong>.</p>
-
                     <p>Passionate about the works of <strong class="shootable" data-target="c2">Tolkien</strong> and the density of universes like those of <strong>Cyberpunk 2077</strong> or <strong class="shootable" data-target="c5">League of Legends</strong>, I see Narrative Design as complex architecture where even the smallest metaphorical detail reinforces <strong>immersion</strong>.</p>
-
                     <p>This pursuit of precision and emotion is also reflected in my inspirations, such as <strong class="shootable" data-target="c4">Frédéric Chopin</strong>: from my Franco-Polish roots, I inherited a sensitivity for virtuoso complexity placed at the service of emotion. This translates even more into my approach to UX and Game Feel: an invisible technical complexity that allows the player to feel a <strong>pure and fluid emotion</strong>.</p>
-
                     <p>On the court, my experience with <strong class="shootable" data-target="c3">volleyball</strong> gave me a sharp understanding of <strong>collective dynamics</strong> and the <strong>transmission of shared emotions</strong>. Whether through the mechanical depth of <strong class="shootable" data-target="c1">Rocket League</strong> or the strategic demands of roguelikes, I strive to seek experiences where system precision meets the satisfaction of pushing one's limits.</p>
-
                     <p>My goal is simple: to <strong>design</strong> rich worlds and deep mechanics that, once in hand, transform every session into an <strong>unforgettable</strong> moment of synergy.</p>
                 </div>
                 
@@ -113,7 +108,6 @@
                             <img src="assets/unity.png" alt="Unity" class="skill-icon">
                             <span>Unity</span> 
                         </div>
-
                         <div class="skill-card">
                             <img src="assets/csharp.png" alt="C#" class="skill-icon">
                             <span>C# / Visual Scripting</span>
@@ -294,25 +288,25 @@
                 </div>
 
                 <div class="project-card btn-details-trigger" data-modal="modal-mh">
-                    <div class="wip-ribbon">WORK IN PROGRESS</div>
-                    <div class="project-bg" style="background-image: url('assets/mh.jpg');"></div>
+                    <div class="wip-ribbon" style="background: #00cec9; color: #000;">UX CASE STUDY</div>
+                    <div class="project-bg" style="background-image: url('assets/mh.jpg'); filter: brightness(0.6);"></div>
                     <div class="project-content">
-                        <span class="project-type">UI REDESIGN / SYSTEM ANALYSIS</span>
-                        <h3>MONSTER HUNTER UI REDESIGN</h3>
+                        <span class="project-type" style="color: #00cec9;">UX RESEARCH / ARCHITECTURE</span>
+                        <h3>MONSTER HUNTER: UX REFOCUS</h3>
                         <div class="project-meta">
-                            <span><i class="fa-solid fa-user-group"></i> Duo</span>
-                            <span><i class="fa-solid fa-book"></i> Document</span>
-                            <span><i class="fa-solid fa-pen-ruler"></i> UI/UX</span>
+                            <span><i class="fa-brands fa-figma"></i> Figma</span>
+                            <span><i class="fa-solid fa-sitemap"></i> User Journey</span>
+                            <span><i class="fa-solid fa-pen-ruler"></i> Wireframing</span>
                         </div>
                         <div class="project-details">
-                            <p>Interface redesign project in progress.</p>
+                            <p>Simplifying a dense, data-heavy interface to reduce cognitive load and user friction.</p>
                             <div class="project-tags">
-                                <span>UI DESIGN</span>
                                 <span>UX RESEARCH</span>
-                                <span>WIREFRAMING</span>
+                                <span>INFORMATION ARCHITECTURE</span>
+                                <span>FIGMA</span>
                             </div>
-                            <button class="btn-play">
-                               SEE THE PROJECT'S PROGRESS <i class="fa-solid fa-helmet-safety"></i>
+                            <button class="btn-play" style="border-bottom-color: #00cec9;">
+                                READ CASE STUDY <i class="fa-solid fa-microscope"></i>
                             </button>
                         </div>
                     </div>
@@ -454,7 +448,7 @@
         </div>
     </div>
 
-<div id="modal-glados" class="project-modal">
+    <div id="modal-glados" class="project-modal">
         <div class="modal-container">
             <span class="close-details">&times;</span>
             
@@ -788,32 +782,84 @@ public class Tutorial_GrapplingGun : MonoBehaviour
             </div>
         </div>
     </div>
+
     <div id="modal-mh" class="project-modal">
         <div class="modal-container">
             <span class="close-details">&times;</span>
+            
             <div class="modal-header">
-                <h2>MONSTER HUNTER UI REDESIGN</h2>
-                <span class="modal-subtitle">UI AND FEEDBACK ANALYSIS</span>
+                <h2>MONSTER HUNTER: UX REFOCUS</h2>
+                <span class="modal-subtitle">SOLVING COGNITIVE OVERLOAD IN COMPLEX INTERFACES</span>
             </div>
+
             <div class="modal-scroll-content">
-                <div class="modal-intro-header">
-                    <p class="story-text" style="text-align: center;">
-                        UX Analyst and Researcher & UI Designer | Duo Project
-                    </p>
-                </div>
                 
-                <h3 class="story-chapter-title">01. GOAL</h3>
-                <div class="story-text">
-                    <p>The goal is to reverse engineer <em>Monster Hunter: World</em> to improve the game's user interface (UI).</p>
+                <div class="modal-intro-header">
+                    <p class="story-text" style="text-align: center; font-size: 1.2rem; color: #fff;">
+                        <em>"How do you organize massive amounts of data without overwhelming the user?"</em>
+                    </p>
+                    <div class="modal-tags-bar">
+                        <span><i class="fa-brands fa-figma"></i> Figma Workspace</span>
+                        <span><i class="fa-solid fa-magnifying-glass-chart"></i> UX Research</span>
+                        <span><i class="fa-solid fa-layer-group"></i> Design System</span>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 25px;">
+                        <a href="https://www.figma.com/board/p2ecsPdw0Nsvcc8RyfKGwx/PES?node-id=0-1&t=JIcy0PhZpC0KjUMe-1" target="_blank" class="dl-btn mh-quest-btn">
+                            <i class="fa-brands fa-figma"></i> OPEN FULL FIGMA BOARD
+                        </a>
+                    </div>
                 </div>
 
-                <h3 class="story-chapter-title">02. FEEDBACKS ANALYSIS</h3>
-                <div class="story-text">
-                    <p>I played the games for several hours and I searched for players feedbacks on forums like reddit. The main problem identified was Layout and readability.</p>
+                <div class="modal-split-layout">
+                    
+                    <div class="story-column">
+                        
+                        <h3 class="story-chapter-title" style="margin-top: 0;">01. The Context & The Friction</h3>
+                        <div class="story-text">
+                            <p>Monster Hunter World is a masterpiece of action, but its User Interface is notoriously dense. Players are bombarded with complex navigation trees, nested menus, and a high cognitive load just to perform basic tasks.</p>
+                            <p><strong>The Objective:</strong> Treat this game interface like a complex SaaS software. The goal of this ongoing case study is to redesign the Information Architecture to reduce friction, minimizing decision time without sacrificing the depth of data.</p>
+                        </div>
+
+                        <h3 class="story-chapter-title">02. Hierarchical Task Analysis (HTA)</h3>
+                        <div class="story-text">
+                            <p>To pinpoint the friction, we broke down the most common player task: <strong>"Emptying quest loot and equipping a saved item loadout"</strong>.</p>
+                            <p>This HTA revealed critical invisible friction points, such as the loadout menu being hidden behind an unprompted "Options" button press, and confusing confirmation pop-ups regarding the Radial Menu overwrite.</p>
+                        </div>
+
+                        <h3 class="story-chapter-title">03. Heuristic Evaluation</h3>
+                        <div class="story-text">
+                            <p>We audited the Item Box interface against industry standards. Three major violations were identified:</p>
+                            <ul>
+                                <li><strong>Error Prevention:</strong> The buttons for "Equip Set" and "Overwrite Set" are visually indistinct and adjacent, leading to accidental deletions of optimized loadouts.</li>
+                                <li><strong>Visibility of System Status:</strong> The split-screen hierarchy between the player's pouch and the chest is weak. The visual feedback for transferring items is easily lost in the dense grid.</li>
+                                <li><strong>Consistency and Standards:</strong> The game uses completely different navigation logic and saved-set interfaces for Consumables vs. Equipment, breaking the player's mental model within the same hub.</li>
+                            </ul>
+                            <p style="font-size: 0.8rem; color: #888; font-style: italic;">Source: 10 Usability Heuristics for User Interface Design, Jakob Nielsen (Nielsen Norman Group).</p>
+                        </div>
+
+                        <h3 class="story-chapter-title">04. Next Steps: Wireframing</h3>
+                        <div class="story-text">
+                            <p>With the analytical framework established, the next phase is translating these pain points into low-fidelity wireframes on Figma, prioritizing clear visual hierarchy and error-preventative layouts.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="visual-column">
+                        <div class="sticky-video-container" style="background: #1e1e1e; padding: 10px; max-height: 75vh; overflow-y: auto;">
+                            
+                            <img src="assets/mh_ui.png" alt="MHW In-Game Menu" style="width: 100%; border-radius: 4px; display: block; margin-bottom: 15px;">
+                            
+                            <img src="assets/mh_figma_hta.png" alt="HTA Analysis on Figma" style="width: 100%; border-radius: 4px; display: block; margin-bottom: 15px; border: 1px solid #333;">
+                            
+                            <img src="assets/mh_figma_heuristics.png" alt="Heuristic Evaluation on Figma" style="width: 100%; border-radius: 4px; display: block; border: 1px solid #333;">
+
+                            <p class="sticky-video-label" style="margin-top: 10px;">Scroll to see Figma Research ↕</p>
+                        </div>
+                    </div>
+
                 </div>
 
-                <h3 class="story-chapter-title">03. UI SCREENSHOTS</h3>
-                <img src="assets/mh_ui.png" alt="UI Screenshots" class="modal-img">
             </div>
         </div>
     </div>

@@ -681,6 +681,142 @@ footer#contact::before {
 #modal-ungor .modal-tags-bar { color: #ff9d00; }
 #modal-ungor figcaption { color: #ff9d00; }
 #modal-ungor .modal-scroll-content::-webkit-scrollbar-thumb { background-color: #555; border: 1px solid #ff9d00; }
+/* =========================================
+   MONSTER HUNTER THEME MODAL (CORRIGÉ & ÉPURÉ)
+   ========================================= */
+
+/* --- Variables locales --- */
+#modal-mh {
+    --mh-gold: #c0a062;
+    --mh-gold-bright: #eacda3;
+    --mh-dark-leather: #1a1510;
+    --mh-brown-border: #4a3b2a;
+}
+
+/* --- 1. ÉRADICATION DU BLEU SUR TOUTES LES ICÔNES --- */
+#modal-mh i, 
+#modal-mh .modal-subtitle,
+#modal-mh .doc-icon, 
+#modal-mh .dl-btn i {
+    color: var(--mh-gold) !important;
+}
+
+/* --- 2. FOND DE LA MODALE --- */
+#modal-mh .modal-container {
+    background-color: var(--mh-dark-leather) !important;
+    border: 2px solid var(--mh-gold) !important;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.9) !important;
+}
+
+#modal-mh .modal-header {
+    border-bottom: 2px solid var(--mh-brown-border) !important;
+    background: transparent !important;
+}
+
+#modal-mh .modal-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--mh-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    border-bottom: 2px solid var(--mh-gold);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* --- 3. LES TAGS (Bordures propres) --- */
+#modal-mh .modal-tags-bar {
+    gap: 15px;
+}
+#modal-mh .modal-tags-bar span {
+    border: 1px solid var(--mh-gold) !important;
+    color: var(--mh-gold) !important;
+    background: rgba(192, 160, 98, 0.05) !important;
+    padding: 8px 15px !important;
+    border-radius: 4px !important; /* Bords légèrement arrondis plus élégants */
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    box-shadow: none !important; /* Retire les contours étranges */
+}
+
+/* --- 4. LE BOUTON FIGMA --- */
+.mh-quest-btn {
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    padding: 12px 30px !important;
+    font-size: 1.1rem;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--mh-gold-bright) !important;
+    background: linear-gradient(180deg, #2b2318, #1a1510) !important;
+    border: 1px solid var(--mh-gold) !important; /* Bordure simple et propre */
+    border-radius: 4px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6) !important;
+    transition: all 0.3s ease !important;
+    outline: none !important; /* Sécurité contre les doubles contours */
+}
+
+.mh-quest-btn i {
+    margin-right: 10px;
+    color: var(--mh-gold-bright) !important;
+    font-size: 1.3rem;
+}
+
+.mh-quest-btn:hover {
+    background: var(--mh-gold) !important;
+    color: #1a1510 !important;
+    box-shadow: 0 0 20px rgba(192, 160, 98, 0.4) !important;
+    transform: translateY(-2px);
+}
+.mh-quest-btn:hover i {
+    color: #1a1510 !important; /* L'icône devient sombre au survol pour contraster */
+}
+
+/* --- 5. TITRES ET TEXTES --- */
+#modal-mh .story-chapter-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--mh-gold) !important;
+    border-left: none !important; /* Supprime l'ancienne barre bleue verticale */
+    padding-left: 0;
+}
+#modal-mh .story-chapter-title::before {
+    content: '❖'; /* Symbole style MHW */
+    margin-right: 10px;
+    color: var(--mh-gold);
+    font-size: 0.8em;
+}
+#modal-mh .story-text p, #modal-mh .story-text ul {
+    color: #cbbba8; /* Couleur parchemin */
+}
+#modal-mh .story-text strong {
+    color: var(--mh-gold-bright);
+}
+
+/* Sécurité anti-barres bleues sur tous les liens */
+#modal-mh .doc-card-inline, 
+#modal-mh .dl-btn {
+    border-left-color: var(--mh-gold) !important;
+}
+
+/* --- 6. COLONNE DES IMAGES --- */
+#modal-mh .visual-column .sticky-video-container {
+    background-color: #0a0806 !important;
+    border: 2px solid var(--mh-brown-border) !important;
+    border-radius: 6px !important;
+    padding: 15px !important;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.9) !important;
+}
+#modal-mh .visual-column img {
+    filter: sepia(30%) contrast(110%);
+    border: 1px solid var(--mh-brown-border) !important;
+}
+#modal-mh .sticky-video-label {
+    color: var(--mh-gold) !important;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
 
 /* =========================================
    9. COMPOSANTS SPÉCIAUX
@@ -1217,4 +1353,144 @@ footer#contact::before {
     50% { box-shadow: 0 0 5px rgba(184, 115, 51, 0.1); border-color: rgba(255, 157, 0, 0.5); }
     75% { box-shadow: 0 0 8px rgba(255, 204, 0, 0.2); border-color: #ffcc00; }
     100% { box-shadow: 0 0 4px rgba(184, 115, 51, 0.1); border-color: rgba(255, 157, 0, 0.3); }
+}
+/* =========================================
+   MONSTER HUNTER THEME MODAL V2
+   ========================================= */
+
+/* --- Variables locales pour ce thème --- */
+#modal-mh {
+    --mh-gold: #c0a062;     /* Couleur Laiton/Or vieilli */
+    --mh-gold-bright: #eacda3; /* Or plus brillant pour le survol */
+    --mh-dark-leather: #1a1510; /* Fond très sombre marron/noir */
+    --mh-brown-border: #4a3b2a; /* Bordure style cuir */
+}
+
+/* --- Fond général de la modale --- */
+#modal-mh .modal-container {
+    background-color: var(--mh-dark-leather);
+    /* Ajoute une texture subtile si tu en as une, sinon la couleur unie suffit */
+    border: 2px solid var(--mh-gold);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+}
+
+/* --- Header Principal --- */
+#modal-mh .modal-header h2 {
+    font-family: 'Playfair Display', serif; /* Police style "ancien" */
+    color: var(--mh-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    border-bottom: 2px solid var(--mh-gold);
+    display: inline-block;
+    padding-bottom: 10px;
+    /* Petit effet décoratif sous le titre */
+    background-image: linear-gradient(to right, transparent, var(--mh-gold), transparent);
+    background-size: 100% 2px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+#modal-mh .modal-subtitle {
+    color: var(--mh-gold-bright);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* --- Intro Header et Tags --- */
+#modal-mh .modal-intro-header p em {
+    color: var(--mh-gold-bright);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+}
+
+#modal-mh .modal-tags-bar span {
+    border: 1px solid var(--mh-gold);
+    color: var(--mh-gold);
+    background: rgba(192, 160, 98, 0.1); /* Or très transparent */
+}
+
+/* --- Le nouveau Bouton "Quête" Figma --- */
+.mh-quest-btn {
+    display: inline-flex;
+    width: auto;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--mh-gold) !important;
+    background: linear-gradient(180deg, #2b2318, #1a1510); /* Dégradé cuir sombre */
+    border: 2px solid var(--mh-gold) !important;
+    /* Bordure "double" pour un effet cadre ancien */
+    outline: 1px solid #000;
+    outline-offset: -4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5), inset 0 0 10px rgba(192, 160, 98, 0.2);
+    transition: all 0.3s ease;
+}
+
+.mh-quest-btn:hover {
+    background: var(--mh-gold) !important;
+    color: #1a1510 !important;
+    box-shadow: 0 0 20px var(--mh-gold);
+    transform: translateY(-2px);
+}
+
+.mh-quest-btn i {
+    margin-right: 10px;
+}
+
+/* --- Titres des chapitres (H3) --- */
+#modal-mh .story-chapter-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--mh-gold);
+    /* Remplace la barre latérale par une puce style "diamant" */
+    border-left: none;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+}
+
+#modal-mh .story-chapter-title::before {
+    content: '❖'; /* Symbole décoratif */
+    margin-right: 10px;
+    color: var(--mh-gold);
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+/* --- Corps du texte --- */
+#modal-mh .story-text p {
+    color: #cbbba8; /* Couleur parchemin clair au lieu de blanc pur */
+}
+#modal-mh .story-text strong {
+    color: var(--mh-gold-bright);
+}
+
+/* --- Conteneur Visuel de Droite (Scrollable) --- */
+#modal-mh .visual-column .sticky-video-container {
+    background-color: #110e0a; /* Fond encore plus sombre */
+    /* Bordure style cadre de carte */
+    border: 4px double var(--mh-brown-border);
+    padding: 15px;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
+}
+
+#modal-mh .visual-column img {
+    /* Effet "carte ancienne" sur les images */
+    filter: sepia(20%) contrast(110%);
+    border: 1px solid var(--mh-brown-border) !important;
+}
+
+#modal-mh .sticky-video-label {
+    color: var(--mh-gold);
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+/* --- Source en bas de page --- */
+#modal-mh .story-text p[style*="font-size: 0.8rem"] {
+    color: var(--mh-gold) !important;
+    opacity: 0.6;
 }
