@@ -311,7 +311,8 @@
                         </div>
                     </div>
                 </div>
-                </div>
+
+            </div>
         </section>
 
         <section id="parcours" class="section-timeline">
@@ -437,7 +438,7 @@
         <div class="text-cv">MY RESUME</div>
     </a>
 
-    <div id="video-modal" class="modal-overlay">
+    <div id="video-modal" class="modal-overlay" style="z-index: 30000 !important;">
         <div class="modal-content">
             <span class="close-modal">&times;</span> 
             <video controls id="full-screen-video">
@@ -752,13 +753,9 @@ public class Tutorial_GrapplingGun : MonoBehaviour
                         <span><i class="fa-solid fa-mobile-screen"></i> Interactive Prototyping</span>
                     </div>
                     
-                    <div style="text-align: center; margin-top: 25px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                        <a href="TON_LIEN_BOARD_FIGMA_ICI" target="_blank" class="dl-btn mh-quest-btn">
-                            <i class="fa-brands fa-figma"></i> SEE UX RESEARCH BOARD
-                        </a>
-                        
-                        <a href="TON_LIEN_PROTOTYPE_ICI" target="_blank" class="dl-btn mh-quest-btn" style="border-color: #00cec9 !important;">
-                            <i class="fa-solid fa-play"></i> TEST INTERACTIVE PROTOTYPE
+                    <div style="text-align: center; margin-top: 25px;">
+                        <a href="https://www.figma.com/board/p2ecsPdw0Nsvcc8RyfKGwx/PES?node-id=0-1&t=nz2nZEmIFNTCWgEf-1" target="_blank" class="dl-btn mh-quest-btn">
+                            <i class="fa-brands fa-figma"></i> SEE FULL UX RESEARCH BOARD
                         </a>
                     </div>
                 </div>
@@ -800,10 +797,17 @@ public class Tutorial_GrapplingGun : MonoBehaviour
                         <div class="sticky-video-container" style="max-height: 75vh; overflow-y: auto;">
                             
                             <img src="assets/mh_figma_macro.jpg" alt="Figma Macro Workspace" style="width: 100%; display: block; margin-bottom: 15px; border-radius: 4px;">
-                            
                             <img src="assets/mh_hta.jpg" alt="HTA and Cognitive Load Analysis" style="width: 100%; display: block; margin-bottom: 15px; border-radius: 4px;">
-                            
-                            <img src="assets/mh_wireframes.jpg" alt="Wireframing and Final Prototype" style="width: 100%; display: block; border-radius: 4px;">
+                            <img src="assets/mh_wireframes.jpg" alt="Wireframing and Final Prototype" style="width: 100%; display: block; margin-bottom: 15px; border-radius: 4px;">
+
+                            <div class="video-trigger" data-video="assets/mh_prototype_demo.mp4" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" style="position: relative; cursor: pointer; border-radius: 4px; overflow: hidden; border: 1px solid var(--mh-gold, #c0a062); transition: transform 0.3s ease;">
+                                <img src="assets/mh_wireframes.jpg" alt="Click to play prototype" style="width: 100%; display: block; filter: brightness(0.4);">
+                                
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%;">
+                                    <i class="fa-solid fa-circle-play" style="font-size: 3rem; color: #eacda3; margin-bottom: 10px; text-shadow: 0 0 15px rgba(0,0,0,0.8);"></i>
+                                    <p style="color: #fff; font-family: 'Oswald', sans-serif; letter-spacing: 2px; margin: 0; font-size: 1.1rem; text-shadow: 0 0 10px rgba(0,0,0,0.8);">SHOW PROTOTYPE IN ACTION</p>
+                                </div>
+                            </div>
 
                             <p class="sticky-video-label" style="margin-top: 10px;">Scroll to see Figma Research ↕</p>
                         </div>
