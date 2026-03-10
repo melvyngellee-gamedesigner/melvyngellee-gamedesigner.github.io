@@ -87,9 +87,12 @@ body {
 }
 .dot { color: var(--accent-blue); }
 
-/* Navigation */
+/* Navigation & Conteneur Principal Fixé */
 main {
-    margin-left: 250px; width: 100%; padding-right: 50px;
+    margin-left: 250px; 
+    flex: 1; /* Prend tout l'espace restant proprement */
+    min-width: 0; /* Empêche les éléments de forcer l'élargissement de l'écran */
+    padding-right: 50px;
 }
 
 .top-nav {
@@ -545,7 +548,6 @@ footer#contact::before {
 /* Le conteneur principal */
 .modal-split-layout {
     display: grid;
-    /* CHANGEMENT ICI : Le texte (0.8) est plus petit que la vidéo (1.2) */
     grid-template-columns: 0.8fr 1.2fr; 
     gap: 30px;
     align-items: start;
@@ -576,7 +578,6 @@ footer#contact::before {
 .sticky-video-container video {
     width: 100%;
     display: block;
-    /* On s'assure que la vidéo ne dépasse pas la hauteur de l'écran */
     max-height: 80vh; 
     object-fit: cover;
 }
@@ -681,6 +682,7 @@ footer#contact::before {
 #modal-ungor .modal-tags-bar { color: #ff9d00; }
 #modal-ungor figcaption { color: #ff9d00; }
 #modal-ungor .modal-scroll-content::-webkit-scrollbar-thumb { background-color: #555; border: 1px solid #ff9d00; }
+
 /* =========================================
    MONSTER HUNTER THEME MODAL (CORRIGÉ & ÉPURÉ)
    ========================================= */
@@ -973,6 +975,15 @@ footer#contact::before {
 }
 
 /* =========================================
+   RESPONSIVE : ORDINATEURS PORTABLES (901px - 1600px)
+   ========================================= */
+@media (max-width: 1920px) and (min-width: 901px) {
+    /* On décale UNIQUEMENT le titre "My Story" vers la droite pour éviter le logo */
+    .section-bio .title-decor {
+        margin-left: 100px; /* Tu peux augmenter ce nombre (ex: 120px) s'il faut pousser plus */
+    }
+}
+/* =========================================
    MOBILE OVERHAUL (VERSION FINALE & ANIMÉE)
    ========================================= */
 @media (max-width: 900px) { /* Changement à 900px pour englober tablettes */
@@ -1245,252 +1256,3 @@ footer#contact::before {
     transition: 0.3s;
 }
 .close-cv-modal:hover { color: white; }
-/* =========================================
-   10. THEMES SPÉCIFIQUES & ANIMATIONS BOUTONS
-   ========================================= */
-
-/* --- A. BLOODLUST (Thème Rouge Sang) --- */
-#modal-bloodlust .modal-header {
-    border-bottom: 3px solid #cf0000;
-    background: linear-gradient(135deg, #1a0000 0%, #000000 100%);
-}
-#modal-bloodlust .modal-subtitle { color: #cf0000; text-shadow: 0 0 10px rgba(207, 0, 0, 0.4); }
-#modal-bloodlust .story-chapter-title::before { background: #cf0000; }
-
-/* Boutons & Cartes Bloodlust */
-#modal-bloodlust .dl-btn, 
-#modal-bloodlust .doc-card-inline {
-    border-color: rgba(207, 0, 0, 0.4);
-    border-left-color: #cf0000; /* Bordure gauche plus forte */
-    animation: heartbeat 2s infinite ease-in-out; /* Animation active par défaut */
-}
-
-#modal-bloodlust .dl-btn:hover, 
-#modal-bloodlust .doc-card-inline:hover {
-    background: rgba(207, 0, 0, 0.15);
-    border-color: #cf0000;
-    box-shadow: 0 0 20px rgba(207, 0, 0, 0.6);
-    color: #cf0000 !important; /* Texte devient rouge */
-    transform: scale(1.02); /* Petit zoom agressif */
-    animation: none; /* On fige l'animation au survol pour le focus */
-}
-
-#modal-bloodlust .doc-icon, #modal-bloodlust .dl-btn i { color: #cf0000; }
-
-@keyframes heartbeat {
-    0% { box-shadow: 0 0 0 rgba(207,0,0,0); }
-    50% { box-shadow: 0 0 10px rgba(207,0,0,0.3); border-color: rgba(207, 0, 0, 0.8); }
-    100% { box-shadow: 0 0 0 rgba(207,0,0,0); }
-}
-
-
-/* --- B. CHROMESTESIA (Thème Néon Cyber) --- */
-#modal-glados .modal-header {
-    background: linear-gradient(135deg, #1a0b2e 0%, #000000 100%);
-    border-bottom: 2px solid #00f2ff;
-}
-#modal-glados .modal-subtitle { color: #ff00ff; text-shadow: 0 0 10px rgba(255, 0, 255, 0.5); }
-#modal-glados .story-chapter-title::before { background: #00f2ff; }
-
-/* Boutons & Cartes Chromesthesia */
-#modal-glados .dl-btn, 
-#modal-glados .doc-card-inline {
-    border-color: rgba(0, 242, 255, 0.4);
-    border-left-color: #ff00ff;
-    animation: speakerPulse 2s infinite ease-out;
-}
-
-#modal-glados .dl-btn:hover, 
-#modal-glados .doc-card-inline:hover {
-    background: rgba(0, 242, 255, 0.1);
-    border-color: #00f2ff;
-    box-shadow: 0 0 15px #00f2ff, 0 0 30px #ff00ff; /* Double glow */
-    color: #00f2ff !important;
-    transform: translateY(-3px);
-    animation: none;
-}
-
-#modal-glados .doc-icon, #modal-glados .dl-btn i { color: #00f2ff; }
-
-@keyframes speakerPulse {
-    0% { transform: scale(1); border-color: rgba(0, 242, 255, 0.4); }
-    15% { transform: scale(1.01); border-color: #ff00ff; box-shadow: 0 0 10px rgba(0,242,255,0.3); }
-    100% { transform: scale(1); border-color: rgba(0, 242, 255, 0.4); }
-}
-
-
-/* --- C. UNGOR BOK (Thème Torche/Caverne) --- */
-#modal-ungor .modal-header {
-    background: linear-gradient(135deg, #2b2b2b 0%, #1a1a1a 100%);
-    border-bottom: 3px solid #ff9d00;
-}
-#modal-ungor .modal-subtitle { color: #ff9d00; text-shadow: 0 0 10px rgba(255, 157, 0, 0.3); }
-#modal-ungor .story-chapter-title::before { background: #ff9d00; }
-
-/* Boutons & Cartes Ungor */
-#modal-ungor .dl-btn, 
-#modal-ungor .doc-card-inline {
-    border-color: rgba(255, 157, 0, 0.3);
-    border-left-color: #ff9d00;
-    animation: torchFlicker 3s infinite ease-in-out;
-}
-
-#modal-ungor .dl-btn:hover, 
-#modal-ungor .doc-card-inline:hover {
-    background: rgba(255, 157, 0, 0.15);
-    border-color: #ff9d00;
-    box-shadow: 0 0 20px rgba(255, 157, 0, 0.6);
-    color: #ff9d00 !important;
-    transform: translateY(-2px);
-    animation: none;
-}
-
-#modal-ungor .doc-icon, #modal-ungor .dl-btn i { color: #ff9d00; }
-
-@keyframes torchFlicker {
-    0% { box-shadow: 0 0 4px rgba(184, 115, 51, 0.1); border-color: rgba(255, 157, 0, 0.3); }
-    25% { box-shadow: 0 0 10px rgba(255, 157, 0, 0.3); border-color: #ff9d00; }
-    50% { box-shadow: 0 0 5px rgba(184, 115, 51, 0.1); border-color: rgba(255, 157, 0, 0.5); }
-    75% { box-shadow: 0 0 8px rgba(255, 204, 0, 0.2); border-color: #ffcc00; }
-    100% { box-shadow: 0 0 4px rgba(184, 115, 51, 0.1); border-color: rgba(255, 157, 0, 0.3); }
-}
-/* =========================================
-   MONSTER HUNTER THEME MODAL V2
-   ========================================= */
-
-/* --- Variables locales pour ce thème --- */
-#modal-mh {
-    --mh-gold: #c0a062;     /* Couleur Laiton/Or vieilli */
-    --mh-gold-bright: #eacda3; /* Or plus brillant pour le survol */
-    --mh-dark-leather: #1a1510; /* Fond très sombre marron/noir */
-    --mh-brown-border: #4a3b2a; /* Bordure style cuir */
-}
-
-/* --- Fond général de la modale --- */
-#modal-mh .modal-container {
-    background-color: var(--mh-dark-leather);
-    /* Ajoute une texture subtile si tu en as une, sinon la couleur unie suffit */
-    border: 2px solid var(--mh-gold);
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
-}
-
-/* --- Header Principal --- */
-#modal-mh .modal-header h2 {
-    font-family: 'Playfair Display', serif; /* Police style "ancien" */
-    color: var(--mh-gold);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-    border-bottom: 2px solid var(--mh-gold);
-    display: inline-block;
-    padding-bottom: 10px;
-    /* Petit effet décoratif sous le titre */
-    background-image: linear-gradient(to right, transparent, var(--mh-gold), transparent);
-    background-size: 100% 2px;
-    background-position: bottom;
-    background-repeat: no-repeat;
-}
-
-#modal-mh .modal-subtitle {
-    color: var(--mh-gold-bright);
-    font-family: 'Oswald', sans-serif;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
-
-/* --- Intro Header et Tags --- */
-#modal-mh .modal-intro-header p em {
-    color: var(--mh-gold-bright);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-}
-
-#modal-mh .modal-tags-bar span {
-    border: 1px solid var(--mh-gold);
-    color: var(--mh-gold);
-    background: rgba(192, 160, 98, 0.1); /* Or très transparent */
-}
-
-/* --- Le nouveau Bouton "Quête" Figma --- */
-.mh-quest-btn {
-    display: inline-flex;
-    width: auto;
-    padding: 15px 35px;
-    font-size: 1.1rem;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--mh-gold) !important;
-    background: linear-gradient(180deg, #2b2318, #1a1510); /* Dégradé cuir sombre */
-    border: 2px solid var(--mh-gold) !important;
-    /* Bordure "double" pour un effet cadre ancien */
-    outline: 1px solid #000;
-    outline-offset: -4px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5), inset 0 0 10px rgba(192, 160, 98, 0.2);
-    transition: all 0.3s ease;
-}
-
-.mh-quest-btn:hover {
-    background: var(--mh-gold) !important;
-    color: #1a1510 !important;
-    box-shadow: 0 0 20px var(--mh-gold);
-    transform: translateY(-2px);
-}
-
-.mh-quest-btn i {
-    margin-right: 10px;
-}
-
-/* --- Titres des chapitres (H3) --- */
-#modal-mh .story-chapter-title {
-    font-family: 'Playfair Display', serif;
-    color: var(--mh-gold);
-    /* Remplace la barre latérale par une puce style "diamant" */
-    border-left: none;
-    padding-left: 0;
-    display: flex;
-    align-items: center;
-}
-
-#modal-mh .story-chapter-title::before {
-    content: '❖'; /* Symbole décoratif */
-    margin-right: 10px;
-    color: var(--mh-gold);
-    font-size: 0.8em;
-    opacity: 0.7;
-}
-
-/* --- Corps du texte --- */
-#modal-mh .story-text p {
-    color: #cbbba8; /* Couleur parchemin clair au lieu de blanc pur */
-}
-#modal-mh .story-text strong {
-    color: var(--mh-gold-bright);
-}
-
-/* --- Conteneur Visuel de Droite (Scrollable) --- */
-#modal-mh .visual-column .sticky-video-container {
-    background-color: #110e0a; /* Fond encore plus sombre */
-    /* Bordure style cadre de carte */
-    border: 4px double var(--mh-brown-border);
-    padding: 15px;
-    box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
-}
-
-#modal-mh .visual-column img {
-    /* Effet "carte ancienne" sur les images */
-    filter: sepia(20%) contrast(110%);
-    border: 1px solid var(--mh-brown-border) !important;
-}
-
-#modal-mh .sticky-video-label {
-    color: var(--mh-gold);
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 1px;
-}
-
-/* --- Source en bas de page --- */
-#modal-mh .story-text p[style*="font-size: 0.8rem"] {
-    color: var(--mh-gold) !important;
-    opacity: 0.6;
-}

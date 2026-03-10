@@ -383,18 +383,15 @@ const codeOverlay = document.getElementById('code-overlay');
 
 if (btnToggleCode && codeWrapper) {
     btnToggleCode.addEventListener('click', () => {
-        // On ajoute la classe pour agrandir
         codeWrapper.classList.toggle('expanded');
+        const isFrench = document.documentElement.lang === 'fr';
         
-        // On gère l'affichage du bouton et de l'overlay
         if (codeWrapper.classList.contains('expanded')) {
-            btnToggleCode.innerHTML = 'COLLAPSE CODE <i class="fa-solid fa-chevron-up"></i>';
-            codeOverlay.style.opacity = '0'; // Cache le dégradé
+            btnToggleCode.innerHTML = isFrench ? 'CACHER LE CODE <i class="fa-solid fa-chevron-up"></i>' : 'COLLAPSE CODE <i class="fa-solid fa-chevron-up"></i>';
+            codeOverlay.style.opacity = '0';
         } else {
-            btnToggleCode.innerHTML = 'SEE ALL CODE <i class="fa-solid fa-chevron-down"></i>';
-            codeOverlay.style.opacity = '1'; // Remet le dégradé
-            
-            // Petit scroll automatique pour remonter si on referme
+            btnToggleCode.innerHTML = isFrench ? 'VOIR TOUT LE CODE <i class="fa-solid fa-chevron-down"></i>' : 'SEE ALL CODE <i class="fa-solid fa-chevron-down"></i>';
+            codeOverlay.style.opacity = '1';
             codeWrapper.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     });
@@ -491,16 +488,15 @@ const bioText = document.querySelector('.bio-text');
 
 if (bioBtn && bioText) {
     bioBtn.addEventListener('click', () => {
-        // 1. On bascule la classe qui montre/cache le texte
         bioText.classList.toggle('expanded');
         
-        // 2. On change le texte du bouton
+        // On détecte si on est sur la page en français
+        const isFrench = document.documentElement.lang === 'fr';
+
         if (bioText.classList.contains('expanded')) {
-            bioBtn.innerHTML = 'SHOW LESS <i class="fa-solid fa-chevron-up"></i>';
+            bioBtn.innerHTML = isFrench ? 'VOIR MOINS <i class="fa-solid fa-chevron-up"></i>' : 'SHOW LESS <i class="fa-solid fa-chevron-up"></i>';
         } else {
-            bioBtn.innerHTML = 'READ MORE <i class="fa-solid fa-chevron-down"></i>';
-            
-            // Optionnel : remonter un peu l'écran si on referme
+            bioBtn.innerHTML = isFrench ? 'LIRE LA SUITE <i class="fa-solid fa-chevron-down"></i>' : 'READ MORE <i class="fa-solid fa-chevron-down"></i>';
             document.querySelector('.section-bio').scrollIntoView({ behavior: 'smooth' });
         }
     });
